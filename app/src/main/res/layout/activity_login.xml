@@ -50,17 +50,19 @@
             android:id="@+id/btnSignUp"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:background="?attr/borderlessButtonStyle"
+            android:background="?attr/selectableItemBackgroundBorderless"
 
             android:text="Sign Up!"
-            android:textAllCaps="false"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
+            android:textAllCaps="false"/>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnForgotPassword"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+
+        android:text="Forgot Password?"
+        android:textAllCaps="false" />
 
 </LinearLayout>

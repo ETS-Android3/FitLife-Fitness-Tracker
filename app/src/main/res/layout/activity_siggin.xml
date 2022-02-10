@@ -68,7 +68,7 @@
         android:textSize="25sp"
         />
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnNext"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:background="@drawable/sign_in_button"
@@ -87,7 +87,7 @@
             android:layout_margin="16dp"
             />
         <Button
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnLogin"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"

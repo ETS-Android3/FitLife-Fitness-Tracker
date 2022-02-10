@@ -19,6 +19,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         //hello
+        //pop
         <activity
             android:name=".sigginActivity"
             android:exported="true">

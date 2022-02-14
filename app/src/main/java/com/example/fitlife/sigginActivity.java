@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -44,90 +45,63 @@ public class sigginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        if(mAuth.getCurrentUser() != null){
-            openQuestionaire();
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(),qeustionaireActivity.class));
+            finish();
         }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerUser();
-                mAuth.createUserWithEmailAndPassword(editTextEmail.toString(), editTextPassword.toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+                //Checking if Data is Valid
+                if (TextUtils.isEmpty(email)) {
+                    editTextEmail.setError("Email Is Required.");
+                    return;
+                }
+                if (TextUtils.isEmpty(password)) {
+                    editTextPassword.setError("Password is Required");
+                    return;
+                }
+                if (password.length() < 6) {
+                    editTextPassword.setError("Password Must Have At Least 6 Characters");
+                    return;
+                }
+                progressBar.setVisibility(View.VISIBLE);
+
+                //Register User To FireBase
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            openQuestionaire();
-                        }
-                        else{
+                        if (task.isSuccessful()) {
+                            Toast.makeText(sigginActivity.this, "User Created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),qeustionaireActivity.class));
+                        } else {
+                            Toast.makeText(sigginActivity.this, "Error Occured" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
+
+                button = (Button) findViewById(R.id.btnLogin);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openLogin();
+                    }
+                });
             }
+
         });
 
-
-        button = (Button) findViewById(R.id.btnLogin);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openLogin();
-            }
-        });
-
-
-   }
-
-    public void openQuestionaire(){
-        Intent intent = new Intent(this, qeustionaireActivity.class);
-        startActivity(intent);
     }
 
-    public  void openLogin(){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
+        public void openLogin () {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
 
 
-
-
-    //This Function to Ensure that the user does submit all text submission for the Registration
-    public void registerUser(){
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-        String firstName = editTextFirstName.getText().toString().trim();
-        String lastName = editTextLastName.getText().toString().trim();
-
-        if(firstName.isEmpty()){
-            editTextFirstName.setError("First Name Required!");
-            editTextFirstName.requestFocus();
-            return;
-        }
-        if(lastName.isEmpty()){
-            editTextLastName.setError("Last Name Required!");
-            editTextLastName.requestFocus();
-            return;
-        }
-        if(email.isEmpty()){
-            editTextEmail.setError("Email Required!");
-            editTextEmail.requestFocus();
-            return;
-        }
-        if(password.isEmpty()){
-            editTextPassword.setError("Password Required!");
-            editTextPassword.requestFocus();
-            return;
-        }
-        if(password.length() < 6){
-            editTextPassword.setError("Password Length Must Be Greater than 6");
-            editTextPassword.requestFocus();
-            return;
-        }
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches());
-        {
-            editTextEmail.setError("Please Provide valid Email!");
-            editTextEmail.requestFocus();
-            return;
-        }
-    }
 
 }

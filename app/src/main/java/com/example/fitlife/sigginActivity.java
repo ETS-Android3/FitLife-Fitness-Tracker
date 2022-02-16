@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 
 
 public class sigginActivity extends AppCompatActivity {
-    private TextView login;
+    private Button login;
     private Button button;
     private FirebaseAuth mAuth;
     private EditText editTextFirstName, editTextLastName, editTextEmail, editTextPassword;
@@ -50,11 +50,22 @@ public class sigginActivity extends AppCompatActivity {
             finish();
         }
 
+        login = findViewById(R.id.btnLogin);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = editTextEmail.getText().toString().trim();
+                String first = editTextFirstName.getText().toString().trim();
+                String last = editTextLastName.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
+
                 //Checking if Data is Valid
                 if (TextUtils.isEmpty(email)) {
                     editTextEmail.setError("Email Is Required.");
@@ -62,6 +73,14 @@ public class sigginActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(password)) {
                     editTextPassword.setError("Password is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(first)){
+                    editTextFirstName.setError("First Name Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(last)){
+                    editTextLastName.setError("Last Name Required");
                     return;
                 }
                 if (password.length() < 6) {
@@ -83,24 +102,12 @@ public class sigginActivity extends AppCompatActivity {
                     }
                 });
 
-
-                button = (Button) findViewById(R.id.btnLogin);
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        openLogin();
-                    }
-                });
             }
 
         });
 
     }
 
-        public void openLogin () {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-        }
 
 
 

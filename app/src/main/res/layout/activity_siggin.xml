@@ -35,6 +35,7 @@
         android:textSize="25sp"
         />
     <EditText
+
         android:id="@+id/etLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

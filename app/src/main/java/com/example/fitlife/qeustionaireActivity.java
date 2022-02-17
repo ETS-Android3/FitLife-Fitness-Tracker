@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+// test comment
 public class qeustionaireActivity extends AppCompatActivity {
 
     private Button button;

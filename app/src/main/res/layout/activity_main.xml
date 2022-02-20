@@ -26,4 +26,23 @@
         android:onClick="logout"
         />
 
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Settings"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Profile"
+        android:textAllCaps="false" />
+
 </LinearLayout>

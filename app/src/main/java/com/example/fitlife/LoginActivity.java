@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView mSignUp;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    Button bSettings;
+    Button bProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mLogin =findViewById(R.id.btnSignIn);
         mSignUp = findViewById(R.id.btnSignUp);
+        bSettings = findViewById(R.id.btnSettings);
+        bProfile = findViewById(R.id.btnProfile);
 
         //Authentication for User Login
         mLogin.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

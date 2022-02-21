@@ -10,6 +10,25 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Fit Life"
+        android:textColor="#8BC34A"
+        android:textSize="50sp"
+      android:layout_marginTop="00dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Meet all of your fitness goals"
+        android:textColor="#8BC34A"
+        android:textSize="20sp"
+        android:layout_marginBottom="0dp"
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"

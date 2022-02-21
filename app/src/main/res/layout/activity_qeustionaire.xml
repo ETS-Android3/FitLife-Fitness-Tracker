@@ -26,6 +26,18 @@
         android:layout_marginBottom="26dp"
         />
     <EditText
+        android:id="@+id/etAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
         android:id="@+id/etHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +46,7 @@
         android:imeOptions="actionNext"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="16dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         />
     <EditText
         android:id="@+id/etWeight"
@@ -45,41 +57,41 @@
         android:imeOptions="actionNext"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="16dp"
-        android:textSize="25sp"
+        android:textSize="20sp"
         />
-    <TextView
+    <EditText
+        android:id="@+id/etSex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Sex Male or Female"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
         android:textSize="20sp"
-        android:text="What is Your Sex?" />
-    <Spinner
-        android:id="@+id/spinner1"
+    />
+    <EditText
+        android:id="@+id/etGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:hint="Goal: Cut, Maintain, Bulk"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
         android:textSize="20sp"
-        android:text="What Is Your Activity Level" />
-    <Spinner
-        android:id="@+id/spinner2"
+        />
+    <EditText
+        android:id="@+id/etActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:hint="Activity: None, Light, Moderate, Heavy"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
         android:textSize="20sp"
-        android:text="What Are Your Fitness Goals?" />
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        />
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="128dp"

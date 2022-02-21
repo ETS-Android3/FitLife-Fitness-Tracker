@@ -86,6 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="invisible"
+        android:text=""
+        android:textColor="#8BC34A"
         />
 
 

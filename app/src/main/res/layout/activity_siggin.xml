@@ -9,13 +9,15 @@
     android:padding="26dp"
     android:orientation="vertical"
     tools:context=".sigginActivity">
+
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="50sp"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
-        />
+        android:textSize="50sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

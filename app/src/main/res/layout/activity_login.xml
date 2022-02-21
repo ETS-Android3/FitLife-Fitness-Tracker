@@ -15,7 +15,9 @@
         android:gravity="center"
         android:textSize="50sp"
         android:layout_height="wrap_content"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
+
         />
     <EditText
         android:id="@+id/etEmail"

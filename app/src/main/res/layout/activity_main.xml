@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+123456<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -34,6 +34,7 @@
         android:elevation="0dp"
         android:text="Settings"
         android:textAllCaps="false"
+        android:layout_margin="00dp"
         />
 
     <Button
@@ -43,6 +44,20 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:elevation="0dp"
         android:text="Profile"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:layout_margin="00dp"
+        />
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="00dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Home"
+        android:textAllCaps="false"
+        android:layout_margin="00dp"
+        />
 
 </LinearLayout>

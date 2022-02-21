@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     Button bSettings;
     Button bProfile;
+    Button bHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

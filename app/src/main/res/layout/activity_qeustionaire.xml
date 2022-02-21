@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
         android:textSize="50sp" />
 
@@ -79,7 +80,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        android:spinnerMode="dropdown"
+        />
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="128dp"

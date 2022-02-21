@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
+       
+        <entry key="..\:/Users/tanvi/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_meal_water_tracking.xml" value="0.17708333333333334" />
+       
+
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3355" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/login_bg.xml" value="0.3355" />
@@ -13,6 +18,7 @@
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_siggin.xml" value="0.25" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.253" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.253" />
+
       </map>
     </option>
   </component>

@@ -67,7 +67,7 @@ public class MealWaterTracking extends AppCompatActivity {
         }
 
     }
-    //test
+    //test2
     public void setWaterIntakeLevel()
     {
         double weight = 150;

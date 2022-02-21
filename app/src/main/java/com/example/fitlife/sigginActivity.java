@@ -94,6 +94,7 @@ public class sigginActivity extends AppCompatActivity {
                     editTextPassword.setError("Password Must Have At Least 6 Characters");
                     return;
                 }
+                //Test
 
                 progressBar.setVisibility(View.VISIBLE);
 

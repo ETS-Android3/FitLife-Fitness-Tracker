@@ -9,25 +9,27 @@
     android:padding="26dp"
     android:orientation="vertical"
     tools:context=".sigginActivity">
+
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="50sp"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
-        />
+        android:textSize="50sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="25sp"
-        android:text="Register"
+        android:text="Registration"
         />
     <EditText
         android:id="@+id/etFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
+        android:hint="First Name..."
         android:inputType="textPersonName"
         android:imeOptions="actionNext"
         android:layout_marginTop="12dp"
@@ -35,10 +37,11 @@
         android:textSize="25sp"
         />
     <EditText
+
         android:id="@+id/etLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"
+        android:hint="Last Name..."
         android:inputType="textPersonName"
         android:imeOptions="actionNext"
         android:layout_marginTop="16dp"
@@ -49,7 +52,7 @@
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email Address"
+        android:hint="Email Address..."
         android:inputType="textEmailAddress"
         android:imeOptions="actionNext"
         android:layout_marginTop="12dp"
@@ -60,7 +63,7 @@
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Password..."
         android:inputType="textPassword"
         android:imeOptions="actionDone"
         android:layout_marginTop="16dp"
@@ -95,4 +98,11 @@
             android:text="Log In!"
             android:textAllCaps="false"/>
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+         />
 </LinearLayout>

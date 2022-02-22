@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fitlife">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".MealWaterTracking"
+            android:exported="false" />
+        <activity
             android:name=".qeustionaireActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".sigginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -21,7 +26,7 @@
         //hello
         //pop
         <activity
-            android:name=".sigginActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

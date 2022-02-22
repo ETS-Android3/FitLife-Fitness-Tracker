@@ -15,7 +15,9 @@
         android:gravity="center"
         android:textSize="50sp"
         android:layout_height="wrap_content"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
+
         />
     <EditText
         android:id="@+id/etEmail"
@@ -77,5 +79,18 @@
         android:elevation="0dp"
         android:text="Forgot Password?"
         android:textAllCaps="false" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:text=""
+        android:textColor="#8BC34A"
+        />
+
+
+
 
 </LinearLayout>

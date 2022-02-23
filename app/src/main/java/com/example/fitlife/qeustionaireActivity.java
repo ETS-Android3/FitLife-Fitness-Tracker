@@ -30,7 +30,6 @@ public class qeustionaireActivity extends AppCompatActivity{
     private Button next;
     EditText editAge, editWeight, editHeight;
     DatabaseReference reference;
-    FirebaseDatabase firebaseDatabase;
     FirebaseAuth fAuth;
     Spinner sexDropdown, workoutDropdown, goalDropdown;
 

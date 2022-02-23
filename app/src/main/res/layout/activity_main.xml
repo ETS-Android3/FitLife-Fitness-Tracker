@@ -15,6 +15,16 @@
         android:text="Hello World!"
     />
     <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Profile PAge"
+        android:id="@+id/profile"
+        />
+    <Button
         android:id="@+id/btnLogOut"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
@@ -25,5 +35,6 @@
         android:text="Log Out"
         android:onClick="logout"
         />
+
 
 </LinearLayout>

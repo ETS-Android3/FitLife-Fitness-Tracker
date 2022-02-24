@@ -33,50 +33,65 @@
         android:layout_height="wrap_content"
         android:text="Hello World!"
     />
-    <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Log Out"
-        android:onClick="logout"
-        />
 
-    <Button
-        android:id="@+id/btnSettings"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="0dp"
-        android:text="Settings"
-        android:textAllCaps="false"
-        android:layout_margin="00dp"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="429dp"
+        android:layout_marginBottom="0dp">
 
-    <Button
-        android:id="@+id/btnProfile"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="0dp"
-        android:text="Profile"
-        android:textAllCaps="false"
-        android:layout_margin="00dp"
-        />
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="288dp"
+            android:layout_marginBottom="49dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:elevation="0dp"
+            android:text="Home"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btnHome"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="00dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="0dp"
-        android:text="Home"
-        android:textAllCaps="false"
-        android:layout_margin="00dp"
-        />
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="Profile"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="49dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:text="Settings"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginBottom="114dp"
+            android:background="@drawable/sign_in_button"
+            android:onClick="logout"
+            android:text="Log Out"
+            android:textColor="#8BC34A"
+            android:textStyle="bold" />
+    </RelativeLayout> <!--This function will allow us to drag and drop buttons based on margin locations-->
 
 </LinearLayout>

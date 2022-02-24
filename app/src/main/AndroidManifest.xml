@@ -21,6 +21,9 @@
             android:name=".userProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".PhysicalActivity"
+            android:exported="false"/>
+        <activity
             android:name=".qeustionaireActivity"
             android:exported="false" />
         <activity

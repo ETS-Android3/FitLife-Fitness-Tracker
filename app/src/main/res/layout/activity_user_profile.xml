@@ -19,22 +19,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="100dp">
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="First Name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="normal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:text="First Name"
-            android:textSize="25dp"
-            android:textColor="@color/black"
-            android:textStyle="normal"
-            android:id="@+id/firstName"
-            android:textAlignment="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:text="Last Name"
             android:textSize="25dp"
             android:textColor="@color/black"
@@ -44,7 +45,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
+            android:paddingTop="5dp"
             android:text="Email"
             android:textSize="25dp"
             android:textColor="@color/black"
@@ -60,6 +61,18 @@
         android:layout_height="0dp"
         android:gravity="center|bottom"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/changePic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Profile Picture" />
+        <Button
+            android:id="@+id/resetBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            />
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
@@ -67,13 +80,6 @@
             android:text="Logout"
             android:onClick="logout"
             />
-
-        <Button
-            android:id="@+id/changePic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Change Profile Picture" />
-
     </LinearLayout>
 
 

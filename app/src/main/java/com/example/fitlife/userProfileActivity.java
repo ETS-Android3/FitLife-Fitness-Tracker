@@ -36,8 +36,9 @@ public class userProfileActivity extends AppCompatActivity {
     FirebaseDatabase fData;
     String userId;
     ImageView profileImage;
-    Button changeImage;
+    Button changeImage, reset;
     StorageReference storageReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +48,25 @@ public class userProfileActivity extends AppCompatActivity {
         last = findViewById(R.id.LastName);
         email = findViewById(R.id.email);
         profileImage = findViewById(R.id.imageView);
+        profileImage.setImageResource(R.mipmap.ic_launcher);
         changeImage = findViewById(R.id.changePic);
+        reset = findViewById(R.id.resetBtn);
 
         fAuth = FirebaseAuth.getInstance();
         fData = FirebaseDatabase.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileImage);
+            }
+        });
+
 
         userId = fAuth.getCurrentUser().getUid();
-        profileImage.setImageResource(R.mipmap.ic_launcher);
+
 
 
         reference = fData.getReference("Users").child(userId);
@@ -99,7 +111,7 @@ public class userProfileActivity extends AppCompatActivity {
 
     private void uploadImageToFirebase(Uri content) {
         //Logic to Upload Image to Fire Base Storage
-        StorageReference fileReference = storageReference.child("profile.jpg");
+        StorageReference fileReference = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
         fileReference.putFile(content).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

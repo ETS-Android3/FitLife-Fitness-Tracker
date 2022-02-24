@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "584548225689",
+    "project_id": "fitli-44277",
+    "storage_bucket": "fitli-44277.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584548225689:android:64dd4b0bfcee61dc911e08",
+        "android_client_info": {
+          "package_name": "com.example.fitlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584548225689-qin9gs22b3pj8g8pu4flk5kpbbeg4rfk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitlife",
+            "certificate_hash": "7236320400dddc9a36a684beb67747261f80f5dc"
+          }
+        },
+        {
+          "client_id": "584548225689-h4jv32foktgciptvuptbohgh97ubl8hq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNHVPAw5Y4iVF7PIYXwt2RxsV1gezMozs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584548225689-h4jv32foktgciptvuptbohgh97ubl8hq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

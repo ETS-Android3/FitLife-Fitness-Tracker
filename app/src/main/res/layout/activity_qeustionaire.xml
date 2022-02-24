@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="#8BC34A"
         android:text="Fit Life"
         android:textSize="50sp" />
 
@@ -52,7 +53,7 @@
         android:id="@+id/etWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Weight in Pounds"
+        android:hint="Enter Your Weight in lbs"
         android:inputType="number"
         android:imeOptions="actionNext"
         android:layout_marginTop="1dp"

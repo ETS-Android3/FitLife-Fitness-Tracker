@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/login_bg"
-    tools:context=".MainActivity">
+    tools:context=".PhysicalActivity">
 
     <android.support.v7.widget.Toolbar
         android:background="@color/purple_700"

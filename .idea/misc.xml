@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/ic_baseline_directions_run_24.xml" value="0.161" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leaderboard.xml" value="0.132" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_login.xml" value="0.19293478260869565" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_physical.xml" value="0.2546875" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_physical2.xml" value="0.2546875" />
+        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_siggin.xml" value="0.2546875" />
       </map>
     </option>
   </component>

@@ -39,7 +39,7 @@ public class userProfileActivity extends AppCompatActivity {
     FirebaseDatabase fData;
     String userId;
     ImageView profileImage;
-    Button changeImage, reset;
+    Button changeImage, reset, main;
     StorageReference storageReference;
 
 
@@ -54,6 +54,14 @@ public class userProfileActivity extends AppCompatActivity {
         profileImage.setImageResource(R.mipmap.ic_launcher);
         changeImage = findViewById(R.id.changePic);
         reset = findViewById(R.id.resetBtn);
+        main = findViewById(R.id.homeBtn2);
+
+        main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
 
         fAuth = FirebaseAuth.getInstance();
         fData = FirebaseDatabase.getInstance();

@@ -10,6 +10,25 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Fit Life"
+        android:textColor="#8BC34A"
+        android:textSize="50sp"
+      android:layout_marginTop="00dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Meet all of your fitness goals"
+        android:textColor="#8BC34A"
+        android:textSize="20sp"
+        android:layout_marginBottom="00dp"
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome User!"
@@ -45,7 +64,46 @@
         android:onClick="logout"
         />
 
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Settings"
+        android:textAllCaps="false"
+        android:layout_margin="00dp"
+        />
 
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Profile"
+        android:textAllCaps="false"
+        android:layout_margin="00dp"
+        />
 
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="00dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="0dp"
+        android:text="Home"
+        android:textAllCaps="false"
+        android:layout_margin="00dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="307dp"
+        android:layout_marginBottom="-140dp"
+        >
+    // FILL BUTTON DATA HERE FOR RELATIVE LAYOUT DRAG AND DROP
+    </RelativeLayout>
 
 </LinearLayout>

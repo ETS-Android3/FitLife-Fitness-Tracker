@@ -21,9 +21,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
-    int totalCalories;
+    double totalCalories;
     double totalWater;
     double height;
     int weight;
@@ -38,10 +39,12 @@ public class MealWaterTracking extends AppCompatActivity {
     TextView cals, wat, name;
     Button home;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_water_tracking);
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String uid = user.getUid();
@@ -64,20 +67,20 @@ public class MealWaterTracking extends AppCompatActivity {
 
                 String userWeight = dataSnapshot.child("User Info").child("Weight").getValue(String.class);
                 weight = Integer.parseInt(userWeight);
+
                 String userAge = dataSnapshot.child("User Info").child("Age").getValue(String.class);
                 age = Integer.parseInt(userAge);
 
-                String sex = dataSnapshot.child("User Info").child("Sex").getValue(String.class);
+                String sex = dataSnapshot.child("User Info").child("Sex").getValue().toString();
                 gender = sex;
 
-
-                String activity = dataSnapshot.child("User Info").child("Activity").getValue(String.class);
+                String activity = dataSnapshot.child("User Info").child("Activity").getValue().toString();
                 activityLevel = activity;
 
-                String goal = dataSnapshot.child("User Info").child("Goal").getValue(String.class);
+                String goal = dataSnapshot.child("User Info").child("Goal").getValue().toString();
                 preference = goal;
 
-                getBMR(height, gender, age,  weight, activityLevel, preference, cals);
+                getBMR(height, gender,  weight, age, activityLevel, preference, cals);
                 setWaterIntakeLevel(weight, wat);
 
 
@@ -105,13 +108,13 @@ public class MealWaterTracking extends AppCompatActivity {
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
 
-        if(gender == "Male")
+        if(gender.equals("Male"))
         {
-            BMR = (66 + (6.3 * weight) + (12.9 * height) - (6.8 * age));
+            BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
         }
-        else if (gender == "Female")
+        else if (gender.equals("Female"))
         {
-            BMR = (655 + (4.3 * weight) + (4.7 * height) - (4.7 * age));
+            BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
         }
         setTotalCalories(activityLevel, preference, BMR, cals);
 
@@ -120,39 +123,40 @@ public class MealWaterTracking extends AppCompatActivity {
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
 
-        totalCalories = (int) BMR;
+        totalCalories = BMR;
         if(activityLevel.equals("No Activity"))
         {
-            totalCalories = (int) (BMR * 1.2);
+            totalCalories = (BMR * 1.2);
         }
         else if(activityLevel.equals("Light Activity = Workout 2-3 Times a Week"))
         {
-            totalCalories = (int) (BMR * 1.375);
+            totalCalories =(BMR * 1.375);
         }
         else if(activityLevel.equals("Moderate activity= Workout 3-4 Times Per Week"))
         {
-            totalCalories = (int) (BMR * 1.55);
+            totalCalories = (BMR * 1.55);
         }
-        else
+        else if(activityLevel.equals("Heavy Activity = Workout 4-5 Times Per Week"))
         {
-            totalCalories = (int) (BMR * 1.725);
+            totalCalories = (BMR * 1.725);
         }
 
 
-        if (preference == "Cutting")
+        if (preference.equals("Cutting"))
         {
             totalCalories = totalCalories - 250;
         }
-        else if (preference == "Maintaining")
+        else if (preference.equals("Maintaining"))
         {
             totalCalories = totalCalories;
         }
-        else
+        else if (preference.equals("Bulking"))
         {
             totalCalories = totalCalories + 250;
         }
 
-        cals.setText(String.valueOf(BMR));
+
+        cals.setText(String.valueOf(totalCalories));
     }
     //test3
     public void setWaterIntakeLevel(int weight, TextView wat)
@@ -161,6 +165,6 @@ public class MealWaterTracking extends AppCompatActivity {
         totalWater = weight/2;
 
         wat.setText(String.valueOf(totalWater));
-
     }
+
 }

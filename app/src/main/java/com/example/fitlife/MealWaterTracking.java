@@ -1,6 +1,5 @@
 package com.example.fitlife;
-
-import android.support.v7.app.AppCompatActivity;
+import androidx.AppCompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

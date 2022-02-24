@@ -107,11 +107,11 @@ public class MealWaterTracking extends AppCompatActivity {
 
         if(gender == "Male")
         {
-            BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
+            BMR = (66 + (6.3 * weight) + (12.9 * height) - (6.8 * age));
         }
         else if (gender == "Female")
         {
-            BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
+            BMR = (655 + (4.3 * weight) + (4.7 * height) - (4.7 * age));
         }
         setTotalCalories(activityLevel, preference, BMR, cals);
 
@@ -121,15 +121,15 @@ public class MealWaterTracking extends AppCompatActivity {
     {
 
         totalCalories = (int) BMR;
-        if(activityLevel == "No Activity")
+        if(activityLevel.equals("No Activity"))
         {
             totalCalories = (int) (BMR * 1.2);
         }
-        else if(activityLevel == "Light Activity = Workout 2-3 Times a Week")
+        else if(activityLevel.equals("Light Activity = Workout 2-3 Times a Week"))
         {
             totalCalories = (int) (BMR * 1.375);
         }
-        else if(activityLevel == "Moderate activity= Workout 3-4 Times Per Week")
+        else if(activityLevel.equals("Moderate activity= Workout 3-4 Times Per Week"))
         {
             totalCalories = (int) (BMR * 1.55);
         }

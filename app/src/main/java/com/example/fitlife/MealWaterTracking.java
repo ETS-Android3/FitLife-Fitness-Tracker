@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
     double totalCalories;
@@ -38,10 +39,12 @@ public class MealWaterTracking extends AppCompatActivity {
     TextView cals, wat, name;
     Button home;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_water_tracking);
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String uid = user.getUid();
@@ -152,6 +155,7 @@ public class MealWaterTracking extends AppCompatActivity {
             totalCalories = totalCalories + 250;
         }
 
+
         cals.setText(String.valueOf(totalCalories));
     }
     //test3
@@ -161,6 +165,6 @@ public class MealWaterTracking extends AppCompatActivity {
         totalWater = weight/2;
 
         wat.setText(String.valueOf(totalWater));
-
     }
+
 }

@@ -21,7 +21,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+class Dbconnection{
+    FirebaseAuth auth;
+    FirebaseUser user;
+    private static Dbconnection instance = null;
+    Dbconnection()
+    {
+        auth =FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
+    }
+    public static Dbconnection getDbconnection(){
+        if(instance == null)
+        {
+            instance = new Dbconnection();
+        }
+        return instance;
+    }
+
+}
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
     double totalCalories;
@@ -41,13 +59,10 @@ public class MealWaterTracking extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate implements Dbconnection(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_water_tracking);
-
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-        String uid = user.getUid();
+        new Dbconnection();
         home = findViewById(R.id.homeBtn);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);

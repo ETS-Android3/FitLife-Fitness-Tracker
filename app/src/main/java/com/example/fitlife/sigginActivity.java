@@ -1,19 +1,17 @@
 package com.example.fitlife;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,8 +23,49 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
+class checkError{
+    private static checkError instance = null;
+    private String email, first, last, pass;
+    private EditText editFirst, editLast, editEmail, editPass;
+    private checkError(){
+        email = editEmail.getText().toString().trim();
+        first = editFirst.getText().toString().trim();
+        last = editLast.getText().toString().trim();
+        pass = editPass.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email)) {
+            editEmail.setError("Email Is Required.");
+            return;
+        }
+        if (TextUtils.isEmpty(pass)) {
+            editPass.setError("Password is Required");
+            return;
+        }
+        if(TextUtils.isEmpty(first)){
+            editFirst.setError("First Name Required");
+            return;
+        }
+        if(TextUtils.isEmpty(last)){
+            editLast.setError("Last Name Required");
+            return;
+        }
+        if (pass.length() < 6) {
+            editPass.setError("Password Must Have At Least 6 Characters");
+            return;
+        }
+    }
+
+    public static checkError getInstance(){
+        if(instance == null){
+            instance = new checkError();
+        }
+        return instance;
+    }
+
+
+
+}
 
 public class sigginActivity extends AppCompatActivity {
     private Button login;

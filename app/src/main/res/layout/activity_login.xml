@@ -91,6 +91,6 @@
         />
 
 
-
+    <include layout="@layout/activity_main" android:id="@+id/id" />
 
 </LinearLayout>

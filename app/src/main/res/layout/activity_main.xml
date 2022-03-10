@@ -84,11 +84,12 @@
 
 
     <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity"
         android:layout_width="match_parent"
         android:layout_height="307dp"
         android:layout_marginBottom="-140dp"
         >
-    // FILL BUTTON DATA HERE FOR RELATIVE LAYOUT DRAG AND DROP
     </RelativeLayout>
 
 </LinearLayout>

@@ -105,34 +105,7 @@ public class sigginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = editTextEmail.getText().toString().trim();
-                String first = editTextFirstName.getText().toString().trim();
-                String last = editTextLastName.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-
-
-
-                //Checking if Data is Valid
-                if (TextUtils.isEmpty(email)) {
-                    editTextEmail.setError("Email Is Required.");
-                    return;
-                }
-                if (TextUtils.isEmpty(password)) {
-                    editTextPassword.setError("Password is Required");
-                    return;
-                }
-                if(TextUtils.isEmpty(first)){
-                    editTextFirstName.setError("First Name Required");
-                    return;
-                }
-                if(TextUtils.isEmpty(last)){
-                    editTextLastName.setError("Last Name Required");
-                    return;
-                }
-                if (password.length() < 6) {
-                    editTextPassword.setError("Password Must Have At Least 6 Characters");
-                    return;
-                }
+                checkError error = checkError.getInstance();
 
                 progressBar.setVisibility(View.VISIBLE);
 

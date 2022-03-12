@@ -48,7 +48,10 @@ public class PhysicalActivity extends AppCompatActivity {
 	@Override
 	public void notifyUser()
 	{
+		
 		System.out.println("Java Factory method design pattern");
+		FactoryMethod();
+			
 	}
 }
 

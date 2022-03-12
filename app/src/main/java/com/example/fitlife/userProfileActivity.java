@@ -19,8 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +34,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+//The Basic layout of the user home page
 public class userProfileActivity extends AppCompatActivity {
     TextView first, last, email;
     FirebaseAuth fAuth;
@@ -66,6 +69,7 @@ public class userProfileActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fData = FirebaseDatabase.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+        //Stores the profile image in a separate folder for the user
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
 
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -81,6 +85,7 @@ public class userProfileActivity extends AppCompatActivity {
 
 
         reference = fData.getReference("Users").child(userId);
+        //Shows the user their information
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -105,6 +110,7 @@ public class userProfileActivity extends AppCompatActivity {
             }
         });
 
+        //Reset Password link for the email and all
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,6 +151,7 @@ public class userProfileActivity extends AppCompatActivity {
 
     }
 
+    //changing the profile image of the user
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -161,21 +168,19 @@ public class userProfileActivity extends AppCompatActivity {
     private void uploadImageToFirebase(Uri content) {
         //Logic to Upload Image to Fire Base Storage
         StorageReference fileReference = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        fileReference.putFile(content).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        fileReference.putFile(content).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profileImage);
-                    }
-                });
-                Toast.makeText(userProfileActivity.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(userProfileActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(userProfileActivity.this, "Profile Image Has Been Uploaded", Toast.LENGTH_SHORT).show();
+                    final String downloadUrl = task.getResult().getStorage().getDownloadUrl().toString();
+                    reference.child("profileimage").setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(userProfileActivity.this, "Stored withing Database", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 

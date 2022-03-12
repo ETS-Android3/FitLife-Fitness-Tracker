@@ -22,7 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".PhysicalActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".qeustionaireActivity"
             android:exported="false" />

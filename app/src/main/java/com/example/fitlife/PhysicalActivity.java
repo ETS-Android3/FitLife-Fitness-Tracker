@@ -42,6 +42,16 @@ public class PhysicalActivity extends AppCompatActivity {
     private boolean wasRunning;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
+    
+    public class PhysicalActivity implements AppCompatActivity {
+
+	@Override
+	public void notifyUser()
+	{
+		System.out.println("Java Factory method design pattern");
+	}
+}
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

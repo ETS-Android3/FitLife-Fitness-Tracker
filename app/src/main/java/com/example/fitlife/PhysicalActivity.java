@@ -46,12 +46,13 @@ public class PhysicalActivity extends AppCompatActivity {
     public class PhysicalActivity implements AppCompatActivity {
 
 	@Override
-	public void notifyUser()
+	public void FactoryMethod()
 	{
 		
 		System.out.println("Java Factory method design pattern");
 		FactoryMethod();
-			
+		product = FactoryMethod();
+		return new AppCompatActivity;
 	}
 }
 

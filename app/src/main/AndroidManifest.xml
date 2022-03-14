@@ -12,19 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MealWaterTracking"
             android:exported="false" />
         <activity
             android:name=".userProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".PhysicalActivity"
+            android:exported="false"/>
+        <activity
             android:name=".qeustionaireActivity"
             android:exported="false" />
         <activity
             android:name=".sigginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

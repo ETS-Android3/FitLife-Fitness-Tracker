@@ -1,13 +1,13 @@
 package com.example.fitlife;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,6 +17,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+import java.util.Random;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity {
 
     Button profile, meal, phys;
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseUser user;
     DatabaseReference reference;
+    TextView dailyChallenge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +87,30 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
+    public void setDailyChallenge{
+        String dailychal;
+        String [] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
+                "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",
+                 "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
+                  "Walk an extra 1000 steps today", "Drink more water today", "Do 10 minutes of yoga today",
+                  "Do 10 leg raises today", "Do high knees for 2 minutes today", "Do 20 lunges today"};
+        Random random = new Random();
+        int select = random.nextInt(arr.length);
+        dailychal = arr[select];
+        dailyChallenge.setText(String.valueOf(dailychal));
+
+    }
+    public void getDailyChallenge()
+    {
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        today.set(Calendar.MINUTE, 0);
+        today.set(Calendar.SECOND, 0);
+        //Set time as 12 AM
+        Timer timer = new Timer();
+        timer.schedule(new setDailyChallenge(), today.getTime(), TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS));
+    }
+
 
 
 }

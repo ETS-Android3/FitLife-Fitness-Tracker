@@ -70,7 +70,7 @@ public class qeustionaireActivity extends AppCompatActivity{
 
         fAuth = FirebaseAuth.getInstance();
         String user_id = fAuth.getCurrentUser().getUid();
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(user_id).child("User Info");
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(user_id).child("UserInfo");
         next = findViewById(R.id.btnRegister);
 
         next.setOnClickListener(new View.OnClickListener() {

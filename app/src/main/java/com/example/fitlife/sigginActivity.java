@@ -122,8 +122,8 @@ public class sigginActivity extends AppCompatActivity {
                                         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
                                         Map newPost = new HashMap();
-                                        newPost.put("First Name", first);
-                                        newPost.put("Last Name", last);
+                                        newPost.put("FirstName", first);
+                                        newPost.put("LastName", last);
                                         newPost.put("Username", userName);
                                         newPost.put("Email", email);
                                         newPost.put("Password", password);

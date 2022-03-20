@@ -174,7 +174,7 @@ public class userProfileActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(userProfileActivity.this, "Profile Image Has Been Uploaded", Toast.LENGTH_SHORT).show();
                     final String downloadUrl = task.getResult().getStorage().getDownloadUrl().toString();
-                    reference.child("profileimage").setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    reference.child("ProfileImage").setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(userProfileActivity.this, "Stored withing Database", Toast.LENGTH_SHORT).show();

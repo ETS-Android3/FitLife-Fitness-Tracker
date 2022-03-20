@@ -8,13 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     Context context;
-    ArrayList<Item> items;
+    List<Item> items;
 
-    public MyAdapter(Context context, ArrayList<Item> items) {
+    public MyAdapter(Context context, List<Item> items) {
         this.context = context;
         this.items = items;
     }
@@ -30,6 +31,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.first.setText(items.get(position).getFirstName());
         holder.last.setText(items.get(position).getLastName());
         holder.user.setText(items.get(position).getUsername());
+
     }
 
     @Override

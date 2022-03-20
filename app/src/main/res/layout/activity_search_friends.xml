@@ -9,6 +9,27 @@
     android:orientation="vertical"
     tools:context=".SearchFriends">
 
+    <TextView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Friends"
+        android:textColor="#8BC34A"
+        android:textAlignment="center"
+        android:paddingBottom="10dp"
+        android:textSize="26dp">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/homeBtn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:text="Home"
+        android:paddingBottom="10dp"
+        tools:ignore="UnknownId" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchResultList"
         android:layout_width="match_parent"
@@ -17,9 +38,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/homeBtn3">
 
     </androidx.recyclerview.widget.RecyclerView>
+
 
 
 

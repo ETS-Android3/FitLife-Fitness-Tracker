@@ -1,12 +1,14 @@
 package com.example.fitlife;
-import androidx.AppCompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
@@ -30,7 +32,7 @@ public class MealWaterTracking extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference().child(user.getUid());
-        reference.addValueEventListener(new ValueEventListener)() {
+        reference.addValueEventListener(new ValueEventListener){
             @Override
                     public void onDataChange(DataSnapshot dataSnapshot){
                 firstName = dataSnapshot.child(uid).child("First Name:").getValue(String.class);
@@ -44,7 +46,7 @@ public class MealWaterTracking extends AppCompatActivity {
                 activityLevel = dataSnapshot.child(uid).child("User Info").child("Activity:").getValue(String.class);
                 preference = dataSnapshot.child(uid).child("User Info").child("Goal:").getValue(String.class);
 
-            }
+            };
 
         }
     }

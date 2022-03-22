@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
-    public void setDailyChallenge{
+    public void setDailyChallenge(){
         String dailychal;
         String [] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
                 "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",

@@ -19,8 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,16 +34,18 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+//The Basic layout of the user home page. User can view their information and change their pfp, reset password and other unique things as well.
 public class userProfileActivity extends AppCompatActivity {
-    TextView first, last, email;
+    TextView first, last, email, user;
     FirebaseAuth fAuth;
     DatabaseReference reference;
     FirebaseDatabase fData;
     String userId;
-    ImageView profileImage;
+    CircleImageView profileImage;
     Button changeImage, reset, main;
     StorageReference storageReference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,8 @@ public class userProfileActivity extends AppCompatActivity {
         first= findViewById(R.id.firstName);
         last = findViewById(R.id.LastName);
         email = findViewById(R.id.email);
+        user = findViewById(R.id.myUser);
+
         profileImage = findViewById(R.id.imageView);
         profileImage.setImageResource(R.mipmap.ic_launcher);
         changeImage = findViewById(R.id.changePic);
@@ -66,6 +72,7 @@ public class userProfileActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fData = FirebaseDatabase.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+        //Stores the profile image in a separate folder for the user
         StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
 
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -81,11 +88,13 @@ public class userProfileActivity extends AppCompatActivity {
 
 
         reference = fData.getReference("Users").child(userId);
+        //Shows the user their information
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                first.setText(snapshot.child("First Name").getValue(String.class));
-                last.setText(snapshot.child("Last Name").getValue(String.class));
+                user.setText(snapshot.child("Username").getValue(String.class));
+                first.setText(snapshot.child("FirstName").getValue(String.class));
+                last.setText(snapshot.child("LastName").getValue(String.class));
                 email.setText(snapshot.child("Email").getValue(String.class));
             }
 
@@ -105,6 +114,7 @@ public class userProfileActivity extends AppCompatActivity {
             }
         });
 
+        //Reset Password link for the email and all
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,6 +155,7 @@ public class userProfileActivity extends AppCompatActivity {
 
     }
 
+    //changing the profile image of the user
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -158,29 +169,30 @@ public class userProfileActivity extends AppCompatActivity {
         }
     }
 
+    //This function upload the image that the user selected for their pfp to firestore
     private void uploadImageToFirebase(Uri content) {
         //Logic to Upload Image to Fire Base Storage
         StorageReference fileReference = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        fileReference.putFile(content).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        fileReference.putFile(content).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Picasso.get().load(uri).into(profileImage);
-                    }
-                });
-                Toast.makeText(userProfileActivity.this, "Image Uploaded", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(userProfileActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(userProfileActivity.this, "Profile Image Has Been Uploaded", Toast.LENGTH_SHORT).show();
+                    final String downloadUrl = task.getResult().getStorage().getDownloadUrl().toString();
+                    reference.child("ProfileImage").setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(userProfileActivity.this, "Stored withing Database", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 
     }
 
+
+    //A function that just logs the user out for the time being
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));

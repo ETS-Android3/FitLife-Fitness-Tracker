@@ -1,33 +1,19 @@
 package com.example.fitlife;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class PhysicalActivity extends AppCompatActivity {
+public class TimerActivity extends AppCompatActivity {
 
     private int id;
     private String ex_name;
@@ -43,13 +29,10 @@ public class PhysicalActivity extends AppCompatActivity {
     private boolean wasRunning;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
-    LinearLayout upperchest,lowerchest,biceps,forearm,benchpress;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_physical);
+        setContentView(R.layout.activity_timer);
 
         exDetails = findViewById(R.id.ex_details);
         exName = findViewById(R.id.ex_name);
@@ -58,20 +41,6 @@ public class PhysicalActivity extends AppCompatActivity {
         startStopBtn = findViewById(R.id.start_stop_btn);
         timer = findViewById(R.id.timer);
 
-
-
-        upperchest = findViewById(R.id.upperchest);
-        lowerchest = findViewById(R.id.lowerchest);
-        biceps = findViewById(R.id.biceps);
-
-        forearm = findViewById(R.id.forearm);
-        benchpress = findViewById(R.id.benchpress);
-
-
-//        int userid = new SessionManager(CardioTrainDetailsActivity.this).getUserId();
-//
-//        Toast.makeText(this, new Repo(this).getAllCardioModel(userid).size() + "", Toast.LENGTH_SHORT)
-//             .show();
 
         date.setText(simpleDateFormat.format(Calendar.getInstance(Locale.ENGLISH)
                 .getTime()));
@@ -82,10 +51,8 @@ public class PhysicalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 finish();
-
             }
         });
         startStopBtn.setOnClickListener(new View.OnClickListener()
@@ -110,25 +77,7 @@ public class PhysicalActivity extends AppCompatActivity {
 
 
 
-        upperchest.setOnClickListener(ov);
-        lowerchest.setOnClickListener(ov);
-        biceps.setOnClickListener(ov);
-
-        forearm.setOnClickListener(ov);
-        benchpress.setOnClickListener(ov);
-
-
-
     }
-
-    View.OnClickListener ov = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-            startActivity(new Intent(getApplicationContext(),TimerActivity.class));
-
-        }
-    };
 
     private void runTimer()
     {

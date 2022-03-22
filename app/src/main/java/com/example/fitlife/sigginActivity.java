@@ -116,6 +116,7 @@ public class sigginActivity extends AppCompatActivity {
 
                             Toast.makeText(sigginActivity.this, "User Created", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),qeustionaireActivity.class));
+                            finish();
                         } else {
                             Toast.makeText(sigginActivity.this, "Error Occured" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

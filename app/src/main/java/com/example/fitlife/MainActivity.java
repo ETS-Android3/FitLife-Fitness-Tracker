@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys;
+    Button profile, meal, phys,timely;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -61,18 +61,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
-                finish();
+                //finish();
             }
         });
 
         phys = findViewById(R.id.physicals);
+
+        timely = findViewById(R.id.timely);
         phys.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),PhysicalActivity.class));
-                finish();
+                //finish();
             }
         });
+        timely.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),TimelyReviewActivity.class));
+                //finish();
+            }
+        });
+
 
     }
     public void logout(View view){

@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+//Class gets the basic bio data for the user. This data will then be stored within the database, so data can be used later on.
 public class qeustionaireActivity extends AppCompatActivity{
 
 
@@ -98,6 +99,7 @@ public class qeustionaireActivity extends AppCompatActivity{
                     return;
                 }
 
+                //Adds the user info to a node within the data under Users.
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

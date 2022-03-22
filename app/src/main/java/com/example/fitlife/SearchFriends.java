@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+//This class takes Creates a recyclerview where users can see all the users within the application. From there the user can click on the item list and then be taken to the Person
+//profile activity
 public class SearchFriends extends AppCompatActivity {
     ValueEventListener listener;
     DatabaseReference reference;
@@ -53,11 +55,13 @@ public class SearchFriends extends AppCompatActivity {
 
         recyclerView.setAdapter(myAdapter);
 
+
         reference = FirebaseDatabase.getInstance().getReference().child("Users");
         listener = reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mUploads.clear();
+                //This Adds the data that will be shown within the recyclerview
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     String FirstName = dataSnapshot.child("FirstName").getValue().toString();
                     String LastName = dataSnapshot.child("LastName").getValue().toString();
@@ -76,6 +80,7 @@ public class SearchFriends extends AppCompatActivity {
 
     }
 
+    //Onclick method when it is clicked the user will be transported to the PersonProfileActiviy class
     private void setOnClickListener() {
         listen = new MyAdapter.RecyclerViewClickListener() {
             @Override

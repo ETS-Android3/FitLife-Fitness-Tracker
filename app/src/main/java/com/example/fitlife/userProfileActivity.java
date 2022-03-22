@@ -36,7 +36,7 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-//The Basic layout of the user home page
+//The Basic layout of the user home page. User can view their information and change their pfp, reset password and other unique things as well.
 public class userProfileActivity extends AppCompatActivity {
     TextView first, last, email, user;
     FirebaseAuth fAuth;
@@ -46,7 +46,6 @@ public class userProfileActivity extends AppCompatActivity {
     CircleImageView profileImage;
     Button changeImage, reset, main;
     StorageReference storageReference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,6 +169,7 @@ public class userProfileActivity extends AppCompatActivity {
         }
     }
 
+    //This function upload the image that the user selected for their pfp to firestore
     private void uploadImageToFirebase(Uri content) {
         //Logic to Upload Image to Fire Base Storage
         StorageReference fileReference = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
@@ -191,6 +191,8 @@ public class userProfileActivity extends AppCompatActivity {
 
     }
 
+
+    //A function that just logs the user out for the time being
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));

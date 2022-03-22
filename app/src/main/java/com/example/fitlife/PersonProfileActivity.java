@@ -27,6 +27,8 @@ import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+//This class allows the user to view other profiles of other users. User is able to send friend request, cancel friend request.
+//The reciever of the friend request can then use them to either deny the request or accept it. When accepted both sender and reciever are allowed to unfriend each other
 public class PersonProfileActivity extends AppCompatActivity {
 
     TextView first, last, email, user;
@@ -113,6 +115,7 @@ public class PersonProfileActivity extends AppCompatActivity {
 
     }
 
+    //When friends are made both the user and user can unfriend each other. This updates the database to make the friendship data deleted.
     private void UnFriendAnExistingFriend() {
         friendsRef.child(sendUserId).child(recieverUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -142,6 +145,7 @@ public class PersonProfileActivity extends AppCompatActivity {
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
         saveCurrentDate = currentDate.format(calForDate.getTime());
 
+        //deletes the friend request node within the database and also creates a new node of friends and updates the users to that.
         friendsRef.child(sendUserId).child(recieverUserId).child("date").setValue(saveCurrentDate).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -288,6 +292,7 @@ public class PersonProfileActivity extends AppCompatActivity {
         });
     }
 
+    //Initializes the different buttons and textview parts of the application
     private void IntializeFields() {
         first= findViewById(R.id.friendFirst);
         last = findViewById(R.id.friendLast);

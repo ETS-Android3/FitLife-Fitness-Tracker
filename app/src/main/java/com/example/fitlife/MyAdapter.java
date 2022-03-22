@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+//Functions necessary for implementing a recyclerview
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Item> items;
     RecyclerViewClickListener listener;
@@ -66,12 +67,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
          void onClick(View v, int position);
     }
 
-
-
-        /*/
-        holder.first.setText(items.get(position).getFirstName());
-        holder.last.setText(items.get(position).getLastName());
-        holder.user.setText(items.get(position).getUsername());
-        */
 
 }

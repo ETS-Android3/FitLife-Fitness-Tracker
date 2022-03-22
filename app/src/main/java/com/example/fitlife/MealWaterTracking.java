@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
+//Calculates teh calories and water needs for a user for their daily intake.
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
     double totalCalories;
@@ -105,6 +106,7 @@ public class MealWaterTracking extends AppCompatActivity {
     }
 
 
+    //Calculates the bmr of the of the user which will be used with calculating the caloric intake for the user
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
 
@@ -120,6 +122,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
+    //Based on the user activity level and goal that they have the bmr of the individual will be used to find the total calories for them
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
 
@@ -158,7 +161,8 @@ public class MealWaterTracking extends AppCompatActivity {
 
         cals.setText(String.valueOf(totalCalories));
     }
-    //test3
+
+    //How much water a user should drink. Very simple formula, uses user weight.
     public void setWaterIntakeLevel(int weight, TextView wat)
     {
 

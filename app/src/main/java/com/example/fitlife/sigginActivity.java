@@ -103,6 +103,8 @@ public class sigginActivity extends AppCompatActivity {
                     editTextUser.setError("Username is Required");
                     return;
                 }
+
+                //This is taking the users information that they have added and place them into the database
                 userNameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                     //Function checks first if the username that the person selected is unique.
                     @Override

@@ -1,5 +1,6 @@
 package com.example.fitlife;
 
+//Item class to store the user information when it is being called on in the recycler view. This is a model class
 public class Item {
     String FirstName, LastName, Username, key;
 

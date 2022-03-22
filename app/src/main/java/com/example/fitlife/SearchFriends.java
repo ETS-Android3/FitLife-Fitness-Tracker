@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 //This class takes Creates a recyclerview where users can see all the users within the application. From there the user can click on the item list and then be taken to the Person
 //profile activity
 public class SearchFriends extends AppCompatActivity {

@@ -34,14 +34,16 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 //The Basic layout of the user home page
 public class userProfileActivity extends AppCompatActivity {
-    TextView first, last, email;
+    TextView first, last, email, user;
     FirebaseAuth fAuth;
     DatabaseReference reference;
     FirebaseDatabase fData;
     String userId;
-    ImageView profileImage;
+    CircleImageView profileImage;
     Button changeImage, reset, main;
     StorageReference storageReference;
 
@@ -53,6 +55,8 @@ public class userProfileActivity extends AppCompatActivity {
         first= findViewById(R.id.firstName);
         last = findViewById(R.id.LastName);
         email = findViewById(R.id.email);
+        user = findViewById(R.id.myUser);
+
         profileImage = findViewById(R.id.imageView);
         profileImage.setImageResource(R.mipmap.ic_launcher);
         changeImage = findViewById(R.id.changePic);
@@ -89,8 +93,9 @@ public class userProfileActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                first.setText(snapshot.child("First Name").getValue(String.class));
-                last.setText(snapshot.child("Last Name").getValue(String.class));
+                user.setText(snapshot.child("Username").getValue(String.class));
+                first.setText(snapshot.child("FirstName").getValue(String.class));
+                last.setText(snapshot.child("LastName").getValue(String.class));
                 email.setText(snapshot.child("Email").getValue(String.class));
             }
 

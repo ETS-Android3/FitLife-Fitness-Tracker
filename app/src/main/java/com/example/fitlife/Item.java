@@ -1,12 +1,13 @@
 package com.example.fitlife;
 
 public class Item {
-    String FirstName, LastName, Username;
+    String FirstName, LastName, Username, key;
 
-    public Item(String FirstName, String LastName, String Username) {
+    public Item(String FirstName, String LastName, String Username, String key) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Username = Username;
+        this.key = key;
     }
 
     public String getFirstName() {
@@ -31,5 +32,13 @@ public class Item {
 
     public void setUsername(String Username) {
         this.Username = Username;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

@@ -26,6 +26,7 @@ public class SearchFriends extends AppCompatActivity {
     RecyclerView recyclerView;
     MyAdapter myAdapter;
     Button button;
+    MyAdapter.RecyclerViewClickListener listen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +41,19 @@ public class SearchFriends extends AppCompatActivity {
                 finish();
             }
         });
-        
-        reference = FirebaseDatabase.getInstance().getReference().child("Users");
+
         mUploads = new ArrayList<>();
 
+        setOnClickListener();
         recyclerView = findViewById(R.id.searchResultList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.smoothScrollToPosition(0);
-        myAdapter = new MyAdapter(this, mUploads);
+        myAdapter = new MyAdapter(mUploads, listen);
 
         recyclerView.setAdapter(myAdapter);
 
+        reference = FirebaseDatabase.getInstance().getReference().child("Users");
         listener = reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -60,7 +62,8 @@ public class SearchFriends extends AppCompatActivity {
                     String FirstName = dataSnapshot.child("FirstName").getValue().toString();
                     String LastName = dataSnapshot.child("LastName").getValue().toString();
                     String Username = dataSnapshot.child("Username").getValue().toString();
-                    mUploads.add(new Item(FirstName, LastName, Username));
+                    String Key = dataSnapshot.getKey();
+                    mUploads.add(new Item(FirstName, LastName, Username, Key));
                 }
                 myAdapter.notifyDataSetChanged();
             }
@@ -71,5 +74,17 @@ public class SearchFriends extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setOnClickListener() {
+        listen = new MyAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(), PersonProfileActivity.class);
+                String user_id = mUploads.get(position).getKey();
+                intent.putExtra("user_id", user_id);
+                startActivity(intent);
+            }
+        };
     }
 }

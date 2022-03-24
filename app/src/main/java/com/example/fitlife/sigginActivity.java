@@ -44,6 +44,7 @@ public class sigginActivity extends AppCompatActivity {
         editTextLastName = findViewById(R.id.etLastName);
         editTextEmail = findViewById(R.id.etEmail);
         editTextPassword = findViewById(R.id.etPassword);
+
         button = findViewById(R.id.btnNext);
         login = findViewById(R.id.btnLogin);
 
@@ -70,6 +71,8 @@ public class sigginActivity extends AppCompatActivity {
                 String last = editTextLastName.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
 
+
+
                 //Checking if Data is Valid
                 if (TextUtils.isEmpty(email)) {
                     editTextEmail.setError("Email Is Required.");
@@ -91,6 +94,7 @@ public class sigginActivity extends AppCompatActivity {
                     editTextPassword.setError("Password Must Have At Least 6 Characters");
                     return;
                 }
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 //Register User To FireBase

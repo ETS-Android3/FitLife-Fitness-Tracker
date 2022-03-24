@@ -8,14 +8,6 @@
     android:background="@drawable/login_bg"
     tools:context=".PhysicalActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:background="@color/purple_700"
-        app:titleTextColor="@color/white"
-        app:title="Cardio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.Toolbar>
 
     <ImageView
         android:src="@drawable/ic_baseline_directions_run_24"
@@ -142,6 +134,8 @@
                 </Button>
 
             </LinearLayout>
+
+
 
         </LinearLayout>
 

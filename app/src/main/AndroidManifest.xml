@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".TimelyActActivity"
+            android:exported="false" />
+        <activity
             android:name=".TimelyReviewActivity"
             android:exported="false" />
         <activity

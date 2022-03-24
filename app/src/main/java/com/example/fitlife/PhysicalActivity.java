@@ -43,7 +43,7 @@ public class PhysicalActivity extends AppCompatActivity {
     private boolean wasRunning;
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
-    LinearLayout upperchest,lowerchest,biceps,forearm,benchpress;
+    TextView strictpress,Squat,biceps,deadlift,benchpress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,17 +54,19 @@ public class PhysicalActivity extends AppCompatActivity {
         exDetails = findViewById(R.id.ex_details);
         exName = findViewById(R.id.ex_name);
         date = findViewById(R.id.date);
+
         cancelBtn = findViewById(R.id.cancel_btn);
         startStopBtn = findViewById(R.id.start_stop_btn);
         timer = findViewById(R.id.timer);
 
 
 
-        upperchest = findViewById(R.id.upperchest);
-        lowerchest = findViewById(R.id.lowerchest);
-        biceps = findViewById(R.id.biceps);
 
-        forearm = findViewById(R.id.forearm);
+
+        strictpress = findViewById(R.id.strictpress);
+        Squat = findViewById(R.id.Squat);
+        biceps = findViewById(R.id.biceps);
+        deadlift = findViewById(R.id.deadlift);
         benchpress = findViewById(R.id.benchpress);
 
 
@@ -110,11 +112,11 @@ public class PhysicalActivity extends AppCompatActivity {
 
 
 
-        upperchest.setOnClickListener(ov);
-        lowerchest.setOnClickListener(ov);
+        strictpress.setOnClickListener(ov);
+        Squat.setOnClickListener(ov);
         biceps.setOnClickListener(ov);
+        deadlift.setOnClickListener(ov);
 
-        forearm.setOnClickListener(ov);
         benchpress.setOnClickListener(ov);
 
 
@@ -125,7 +127,12 @@ public class PhysicalActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            startActivity(new Intent(getApplicationContext(),TimerActivity.class));
+
+            TextView b = (TextView)view;
+            String buttonText = b.getText().toString();
+            Intent intent = new Intent(getApplicationContext(),TimerActivity.class);
+            intent.putExtra("name",buttonText);
+            startActivity(intent);
 
         }
     };

@@ -173,11 +173,12 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
                 app:cardCornerRadius="8dp"
+
                 android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:id="@+id/upperchest"
+
                     android:layout_height="wrap_content">
 
 
@@ -188,13 +189,15 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_gravity="center"
                         android:textSize="15dp"
+                        android:id="@+id/strictpress"
+
                         android:layout_marginStart="10dp"
-                        android:text="Upper Chest"/>
+                        android:text="strict press"/>
 
                 </LinearLayout>
 
@@ -210,7 +213,6 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:id="@+id/lowerchest"
                     android:layout_height="wrap_content">
 
 
@@ -221,13 +223,15 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_gravity="center"
                         android:textSize="15dp"
+                        android:id="@+id/Squat"
+
                         android:layout_marginStart="10dp"
-                        android:text="Lower Chest"/>
+                        android:text="Squat"/>
 
                 </LinearLayout>
 
@@ -243,7 +247,6 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:id="@+id/biceps"
                     android:layout_height="wrap_content">
 
 
@@ -254,19 +257,19 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_gravity="center"
                         android:textSize="15dp"
+                        android:id="@+id/biceps"
+
                         android:layout_marginStart="10dp"
                         android:text="Biceps"/>
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_marginStart="10dp"
@@ -278,7 +281,6 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:id="@+id/forearm"
                     android:layout_height="wrap_content">
 
 
@@ -289,13 +291,15 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_gravity="center"
                         android:textSize="15dp"
+                        android:id="@+id/deadlift"
+
                         android:layout_marginStart="10dp"
-                        android:text="Forearms"/>
+                        android:text="Deadlift"/>
 
                 </LinearLayout>
 
@@ -311,7 +315,6 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:id="@+id/benchpress"
                     android:layout_height="wrap_content">
 
 
@@ -322,11 +325,13 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:layout_gravity="center"
                         android:textSize="15dp"
+                        android:id="@+id/benchpress"
+
                         android:layout_marginStart="10dp"
                         android:text="Bench Press"/>
 

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys;
+    Button profile, meal, phys, leader;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -74,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        leader = findViewById(R.id.btnleader);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),leaderBoard.class));
+                finish();
+            }
+        });
+
     }
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
@@ -81,6 +90,4 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
-
-
 }

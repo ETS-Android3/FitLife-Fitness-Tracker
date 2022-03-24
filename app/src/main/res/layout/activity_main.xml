@@ -80,6 +80,15 @@
         android:onClick="logout"
         />
 
+    <Button
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
 
 
 
@@ -88,7 +97,7 @@
         android:layout_height="307dp"
         android:layout_marginBottom="-140dp"
         >
-    // FILL BUTTON DATA HERE FOR RELATIVE LAYOUT DRAG AND DROP
+        // FILL BUTTON DATA HERE FOR RELATIVE LAYOUT DRAG AND DROP
     </RelativeLayout>
 
 </LinearLayout>

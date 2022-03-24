@@ -31,6 +31,22 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <receiver
+            android:name=".MyAlarmReceiver"
+            android:process=":remote" >
+        </receiver>
+        <receiver
+            android:name=".MyAlarmReceiver"
+            android:process=":remote" >
+        </receiver>
+
+        <service
+            android:name=".MyTestService"
+            android:exported="false" />
+
+        <service
+            android:name=".MyTestService"
+            android:exported="false" />
         <activity
             android:name=".MealWaterTracking"
             android:exported="false" />

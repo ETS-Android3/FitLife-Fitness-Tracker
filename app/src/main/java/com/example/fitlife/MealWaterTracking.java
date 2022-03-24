@@ -8,11 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-//Calculates teh calories and water needs for a user for their daily intake.
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
     double totalCalories;
@@ -60,26 +55,26 @@ public class MealWaterTracking extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                firstName = dataSnapshot.child("FirstName").getValue(String.class);
-                lastName = dataSnapshot.child("LastName").getValue(String.class);
+                firstName = dataSnapshot.child("First Name").getValue(String.class);
+                lastName = dataSnapshot.child("Last Name").getValue(String.class);
                 name.setText(firstName + " " + lastName);
 
-                String userHeight = dataSnapshot.child("UserInfo").child("Height").getValue(String.class);
+                String userHeight = dataSnapshot.child("User Info").child("Height").getValue(String.class);
                 height = Double.parseDouble(userHeight);
 
-                String userWeight = dataSnapshot.child("UserInfo").child("Weight").getValue(String.class);
+                String userWeight = dataSnapshot.child("User Info").child("Weight").getValue(String.class);
                 weight = Integer.parseInt(userWeight);
 
-                String userAge = dataSnapshot.child("UserInfo").child("Age").getValue(String.class);
+                String userAge = dataSnapshot.child("User Info").child("Age").getValue(String.class);
                 age = Integer.parseInt(userAge);
 
-                String sex = dataSnapshot.child("UserInfo").child("Sex").getValue().toString();
+                String sex = dataSnapshot.child("User Info").child("Sex").getValue().toString();
                 gender = sex;
 
-                String activity = dataSnapshot.child("UserInfo").child("Activity").getValue().toString();
+                String activity = dataSnapshot.child("User Info").child("Activity").getValue().toString();
                 activityLevel = activity;
 
-                String goal = dataSnapshot.child("UserInfo").child("Goal").getValue().toString();
+                String goal = dataSnapshot.child("User Info").child("Goal").getValue().toString();
                 preference = goal;
 
                 getBMR(height, gender,  weight, age, activityLevel, preference, cals);
@@ -107,7 +102,6 @@ public class MealWaterTracking extends AppCompatActivity {
     }
 
 
-    //Calculates the bmr of the of the user which will be used with calculating the caloric intake for the user
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
 
@@ -123,7 +117,6 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
-    //Based on the user activity level and goal that they have the bmr of the individual will be used to find the total calories for them
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
 
@@ -162,8 +155,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
         cals.setText(String.valueOf(totalCalories));
     }
-
-    //How much water a user should drink. Very simple formula, uses user weight.
+    //test3
     public void setWaterIntakeLevel(int weight, TextView wat)
     {
 

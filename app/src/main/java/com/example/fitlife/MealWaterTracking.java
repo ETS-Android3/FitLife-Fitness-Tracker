@@ -49,6 +49,7 @@ public class MealWaterTracking extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String uid = user.getUid();
+
         home = findViewById(R.id.homeBtn);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);

@@ -129,6 +129,7 @@ public class sigginActivity extends AppCompatActivity {
                                         newPost.put("Username", userName);
                                         newPost.put("Email", email);
                                         newPost.put("Password", password);
+                                        newPost.put("Points", 0);
                                         current_user_db.setValue(newPost);
 
 

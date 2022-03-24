@@ -85,8 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        bSettings = findViewById(R.id.btnSettings);
-        bProfile = findViewById(R.id.btnProfile);
+
 
 
         //Authentication for User Login

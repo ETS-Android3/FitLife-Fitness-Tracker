@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
         //Authentication for User Login
         //Validates that all text fields are not left empty
         mLogin.setOnClickListener(new View.OnClickListener() {

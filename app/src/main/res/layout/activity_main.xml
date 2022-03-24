@@ -59,6 +59,7 @@
         android:textStyle="bold"
         android:text="Meal Tracker"/>
     <Button
+
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -67,7 +68,26 @@
         android:textStyle="bold"
         android:text="Physical Tracker"
         android:id="@+id/physicals"/>
-
+ 
+    <Button
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Find Friends"
+        android:id="@+id/btnFriend"
+        />
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="128dp"
@@ -80,16 +100,6 @@
         android:onClick="logout"
         />
 
-    <Button
-        android:id="@+id/btnleader"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="leader board"/>
-
 
 
     <RelativeLayout
@@ -97,7 +107,6 @@
         android:layout_height="307dp"
         android:layout_marginBottom="-140dp"
         >
-        // FILL BUTTON DATA HERE FOR RELATIVE LAYOUT DRAG AND DROP
     </RelativeLayout>
 
 </LinearLayout>

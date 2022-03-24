@@ -17,9 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys;
+    Button profile, meal, phys, friends;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String First = snapshot.child("First Name").getValue(String.class);
+                String First = snapshot.child("FirstName").getValue(String.class);
                 userName.setText(First);
             }
 
@@ -71,6 +72,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),PhysicalActivity.class));
                 finish();
+            }
+        });
+
+        friends = findViewById(R.id.btnFriend);
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
             }
         });
 

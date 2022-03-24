@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+//A timer for the physical activity. A basic stopwatch timing the user on how long they completed their activity
 public class PhysicalActivity extends AppCompatActivity {
 
     private int id;

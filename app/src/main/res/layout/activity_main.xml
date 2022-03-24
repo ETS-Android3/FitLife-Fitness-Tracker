@@ -68,7 +68,16 @@
         android:textStyle="bold"
         android:text="Physical Tracker"
         android:id="@+id/physicals"/>
- 
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Timley Review"
+        android:id="@+id/btnTime"
+        />
     <Button
         android:id="@+id/btnleader"
         android:layout_width="128dp"
@@ -102,11 +111,6 @@
 
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="307dp"
-        android:layout_marginBottom="-140dp"
-        >
-    </RelativeLayout>
+
 
 </LinearLayout>

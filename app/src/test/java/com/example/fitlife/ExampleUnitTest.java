@@ -46,11 +46,18 @@ public class ExampleUnitTest {
         assertEquals(2133, BMRwithactivity);
     }
     @Test
-    public void preferenceLevel_isCorrect()
+    public void CuttingLevel_isCorrect()
     {
-        //Cutting
+        //Cutting with no activity
         long preference = (long)((1778*1.2)-250);
         assertEquals(1883, preference);
+    }
+    @Test
+    public void BulkingLevel_isCorrect()
+    {
+        //Bulking with no activity
+        long preference = (long)((1778*1.2)+250);
+        assertEquals(2383, preference);
     }
 
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:gravity="center"
+    android:padding="26dp"
+    android:orientation="vertical"
+    tools:context=".leaderBoard">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#8BC34A"
+        android:text="Fit Life"
+        android:textSize="50sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:text="Leaderboard Input"
+        android:layout_marginBottom="6dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="How minutes did you run?" />
+
+    <Spinner
+        android:id="@+id/spinners1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/app_name"
+        android:spinnerMode="dropdown" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="How many minutes of weight lifting?" />
+
+    <Spinner
+        android:id="@+id/spinners2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/app_name"
+        android:spinnerMode="dropdown" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Did you meet your water intake goal?"
+        />
+
+    <Spinner
+
+        android:id="@+id/spinners3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/app_name"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Did you meet your calorie intake goal?"
+        />
+
+    <Spinner
+        android:id="@+id/spinners4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/app_name"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/btnSendData"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Send data"
+        />
+</LinearLayout>

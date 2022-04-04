@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//The Class allows users to login to a account. If they do not know their password allows a forgot password to be placed. If no login then they are able to create a new account.
 public class LoginActivity extends AppCompatActivity {
 
     Button mLogin;
@@ -29,9 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView mSignUp, mForgot;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
-    Button bSettings;
-    Button bProfile;
-    Button bHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mLogin =findViewById(R.id.btnSignIn);
         mSignUp = findViewById(R.id.btnSignUp);
-      
+
         mForgot = findViewById(R.id.btnForgotPassword);
 
         mForgot.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +84,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
         //Authentication for User Login
+        //Validates that all text fields are not left empty
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,9 +114,10 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged In!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            finish();
                         }
                         else{
-                                Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

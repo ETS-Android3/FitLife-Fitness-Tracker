@@ -1,3 +1,4 @@
+
 package com.example.fitlife;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys, friends, leader;
+    Button profile, meal, leader, phys, friends, timely, daily;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -66,29 +67,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         leader = findViewById(R.id.btnleader);
         leader.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),leaderBoard.class));
-            });
-        
-              phys = findViewById(R.id.physicals);
-        phys.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),PhysicalActivity.class));
+                startActivity(new Intent(getApplicationContext(), leaderBoard.class));
                 finish();
             }
         });
+
+
 
         friends = findViewById(R.id.btnFriend);
         friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),SearchFriends.class));
+            }
+        });
+
+        phys = findViewById(R.id.physicals);
+        phys.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
+            }
+        });
+
+        timely = findViewById(R.id.btnTime);
+        timely.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
+            }
+        });
+
+        daily = findViewById(R.id.daily);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity((new Intent(getApplicationContext(), DailyChallenge.class)));
+
             }
         });
 

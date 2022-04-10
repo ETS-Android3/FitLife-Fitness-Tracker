@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
-        <activity android:name=".leaderBoard"
-            android:exported="false"/>
+        <activity
+            android:name=".leaderBoard"
+            android:exported="false" />
+        <activity
+            android:name=".DailyChallenge"
+            android:exported="false" />
         <activity
             android:name=".PersonProfileActivity"
             android:exported="false" />
@@ -20,7 +24,13 @@
             android:name=".SearchFriends"
             android:exported="false" />
         <activity
-            android:name=".leaderBoard"
+            android:name=".TimelyActActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimelyReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimerActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

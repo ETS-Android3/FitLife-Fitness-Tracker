@@ -9,7 +9,10 @@
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/login_bg.xml" value="0.332" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/sign_in_button.xml" value="0.332" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_add_friends.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_daily_challenge.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_find_friends.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leader_board.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leaderboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_meal_water_tracking.xml" value="0.2798913043478261" />
@@ -19,6 +22,8 @@
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_search_friends.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_siggin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_act.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_review.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_user_profile.xml" value="0.2798913043478261" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/all_user_display.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/single_view_find_friend.xml" value="0.36666666666666664" />

@@ -12,16 +12,37 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class leaderBoard extends AppCompatActivity {
 
     Button leader;
     Spinner runningDropdown, weightsDropdown, waterDropdown, calorieDropdown;
-    int runPoints = 0;
-    int weightPoints = 0;
-    int waterPoints = 0;
-    int caloriePoints = 0;
-    int totalPoints = 0;
+    /*
+    int runPoints;
+    int weightPoints;
+    int waterPoints;
+    int caloriePoints;
+
+     */
+    int totalPoints;
+    String calorieDrop, weightDrop, watersDrop, running;
+    String upCal, upWeight, upWater, upRun;
+    DatabaseReference reference, getData, update;
+    FirebaseAuth fAuth;
+    FirebaseUser user;
 
     // Running for 15 mins increments = 5 points
     // lifting for 30 mins increments = 5 points
@@ -32,7 +53,24 @@ public class leaderBoard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_leaderlist);//get the spinner from the xml.
+        setContentView(R.layout.activity_leader_board);//get the spinner from the xml.
+
+        fAuth = FirebaseAuth.getInstance();
+        user = fAuth.getCurrentUser();
+        String uid = user.getUid();
+        getData = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        getData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String points = snapshot.child("Points").getValue().toString();
+                totalPoints = Integer.parseInt(points);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         runningDropdown = findViewById(R.id.spinners1);
         //create a list of items for the spinner.
@@ -41,15 +79,19 @@ public class leaderBoard extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         runningDropdown.setAdapter(adapter);
 
+
+        /*
         if (runningDropdown.equals("15 mins")) {
-            int runPoints = 5;
+            runPoints = 5;
         }
-        if (runningDropdown.equals("30 mins")) {
-            int runPoints = 10;
+        else if(running.equals("30 mins")) {
+            runPoints = 10;
         }
-        if (runningDropdown.equals("60 mins")) {
-            int runPoints = 15;
+        else if (running.equals("45 mins")) {
+            runPoints = 15;
         }
+
+         */
 
         weightsDropdown = findViewById(R.id.spinners2);
         //create a list of items for the spinner.
@@ -58,15 +100,18 @@ public class leaderBoard extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         weightsDropdown.setAdapter(adapter2);
 
+        /*
         if (weightsDropdown.equals("30 mins")) {
-            int weightPoints = 5;
+            weightPoints = 5;
         }
-        if (weightsDropdown.equals("60 mins")) {
-            int weightPoints = 10;
+        else if (weightsDropdown.equals("60 mins")) {
+            weightPoints = 10;
         }
-        if (weightsDropdown.equals("120 mins")) {
-            int weightPoints = 15;
+        else if (weightsDropdown.equals("120 mins")) {
+            weightPoints = 15;
         }
+
+         */
 
         waterDropdown = findViewById(R.id.spinners3);
         //create a list of items for the spinner.
@@ -75,12 +120,16 @@ public class leaderBoard extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         waterDropdown.setAdapter(adapter3);
 
+
+        /*
         if (waterDropdown.equals("I almost reached my goal")) {
-            int waterPoints = 3;
+            waterPoints = 3;
         }
-        if (waterDropdown.equals("I reached my goal!")) {
-            int waterPoints = 15;
+        else if (waterDropdown.equals("I reached my goal!")) {
+            waterPoints = 15;
         }
+
+         */
 
         calorieDropdown = findViewById(R.id.spinners4);
         //create a list of items for the spinner.
@@ -89,13 +138,58 @@ public class leaderBoard extends AppCompatActivity {
         //set the spinners adapter to the previously created one.
         calorieDropdown.setAdapter(adapter4);
 
+        /*
         if (calorieDropdown.equals("I almost reached my calorie goal")) {
-            int caloriePoints = 3;
+            caloriePoints = 3;
         }
-        if (calorieDropdown.equals("I reached my calorie goal!")) {
-            int caloriePoints = 15;
+        else if (calorieDropdown.equals("I reached my calorie goal!")) {
+            caloriePoints = 15;
         }
 
-        int totalPoints = runPoints + weightPoints + waterPoints + caloriePoints;
+         */
+
+        leader = findViewById(R.id.btnSendData);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("LeaderData");
+                calorieDrop = calorieDropdown.getSelectedItem().toString().trim();
+                watersDrop = waterDropdown.getSelectedItem().toString().trim();
+                running = runningDropdown.getSelectedItem().toString().trim();
+                weightDrop = weightsDropdown.getSelectedItem().toString().trim();
+
+
+
+                HashMap newPoints = new HashMap();
+                newPoints.put("Run", running);
+                newPoints.put("Weights", weightDrop);
+                newPoints.put("Water", watersDrop);
+                newPoints.put("Calorie", calorieDrop);
+                reference.setValue(newPoints);
+                Toast.makeText(leaderBoard.this, "Data Has Sent", Toast.LENGTH_SHORT).show();
+
+                startActivity((new Intent(getApplicationContext(), MainActivity.class)));
+            }
+        });
+
+    }
+
+    public void updatePoints(String uid){
+        update = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("LeaderData");
+        update.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                upCal = snapshot.child("Calorie").getValue().toString();
+                upWeight = snapshot.child("Weights").getValue().toString();
+                upRun = snapshot.child("Run").getValue().toString();
+                upWater = snapshot.child("Water").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }

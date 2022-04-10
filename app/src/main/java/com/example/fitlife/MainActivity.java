@@ -1,3 +1,4 @@
+
 package com.example.fitlife;
 
 import androidx.annotation.NonNull;
@@ -17,22 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
-
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys, friends, daily;
+    Button profile, meal, leader, phys, friends, timely;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
     DatabaseReference reference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
-
         String uid = user.getUid();
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
@@ -61,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), userProfileActivity.class));
+                startActivity(new Intent(getApplicationContext(),userProfileActivity.class));
                 finish();
             }
         });
@@ -70,8 +62,27 @@ public class MainActivity extends AppCompatActivity {
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MealWaterTracking.class));
+                startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
                 finish();
+            }
+        });
+
+        leader = findViewById(R.id.btnleader);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), leaderBoard.class));
+                finish();
+            }
+        });
+
+
+
+        friends = findViewById(R.id.btnFriend);
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
             }
         });
 
@@ -80,39 +91,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
-                finish();
             }
         });
 
-        friends = findViewById(R.id.btnFriend);
-        friends.setOnClickListener(new View.OnClickListener() {
+        timely = findViewById(R.id.btnTime);
+        timely.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SearchFriends.class));
-                finish();
+                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
             }
         });
 
-        daily = findViewById(R.id.dailyChallengeBtn);
-        daily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), DailyChallenge.class));
-                finish();
-            }
-        });
 
     }
-
-    public void logout(View view) {
+    public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
 
     }
-
-
-
-
-
 }

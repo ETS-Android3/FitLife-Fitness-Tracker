@@ -8,11 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-//Calculates teh calories and water needs for a user for their daily intake.
 public class MealWaterTracking extends AppCompatActivity {
     double BMR;
     double totalCalories;
@@ -49,6 +44,7 @@ public class MealWaterTracking extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String uid = user.getUid();
+
         home = findViewById(R.id.homeBtn);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);
@@ -106,7 +102,6 @@ public class MealWaterTracking extends AppCompatActivity {
     }
 
 
-    //Calculates the bmr of the of the user which will be used with calculating the caloric intake for the user
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
 
@@ -122,7 +117,6 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
-    //Based on the user activity level and goal that they have the bmr of the individual will be used to find the total calories for them
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
 
@@ -161,8 +155,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
         cals.setText(String.valueOf(totalCalories));
     }
-
-    //How much water a user should drink. Very simple formula, uses user weight.
+    //test3
     public void setWaterIntakeLevel(int weight, TextView wat)
     {
 

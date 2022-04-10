@@ -59,6 +59,7 @@
         android:textStyle="bold"
         android:text="Meal Tracker"/>
     <Button
+
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -74,8 +75,18 @@
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
-        android:text="Daily Challenge"
-        android:id="@+id/dailyChallengeBtn"/>
+        android:text="Timley Review"
+        android:id="@+id/btnTime"
+        />
+    <Button
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
     <Button
         android:layout_width="128dp"
         android:layout_height="wrap_content"
@@ -97,6 +108,8 @@
         android:text="Log Out"
         android:onClick="logout"
         />
+
+
 
 
 

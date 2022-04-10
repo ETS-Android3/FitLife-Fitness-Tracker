@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="50dp"
     android:orientation="vertical"
-    tools:context=".userProfileActivity"
-    android:paddingTop="50dp">
-
+    tools:context=".PersonProfileActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView"
+        android:id="@+id/friendImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         tools:srcCompat="@mipmap/ic_launcher" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/friendImage"
         android:orientation="vertical"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:id="@+id/linProf">
 
         <TextView
-            android:id="@+id/myUser"
+            android:id="@+id/friendUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
@@ -31,8 +34,9 @@
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="normal" />
+
         <TextView
-            android:id="@+id/firstName"
+            android:id="@+id/friendFirst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
@@ -50,7 +54,7 @@
             android:textSize="25dp"
             android:textColor="@color/black"
             android:textStyle="normal"
-            android:id="@+id/LastName"
+            android:id="@+id/friendLast"
             android:textAlignment="center"/>
         <TextView
             android:layout_width="match_parent"
@@ -60,43 +64,32 @@
             android:textSize="25dp"
             android:textColor="@color/black"
             android:textStyle="normal"
-            android:id="@+id/email"
-            android:textAlignment="center"/>
+            android:id="@+id/friendEmail"
+            android:textAlignment="center" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="0dp"
-        android:gravity="center|bottom"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/person_send_friend_request"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linProf"
+        android:layout_marginTop="45dp"
+        android:background="#8BC34A"
+        android:text="Send Friend Request"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        />
 
-        <Button
-            android:id="@+id/homeBtn2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Home"/>
-        <Button
-            android:id="@+id/changePic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Change Profile Picture" />
-        <Button
-            android:id="@+id/resetBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Reset Password"
-            />
-        <Button
-            android:id="@+id/logoutBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:onClick="logout"
-            />
-    </LinearLayout>
+    <Button
+        android:id="@+id/person_decline_friend_request"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_send_friend_request"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="#EC7676"
+        android:text="Decline Friend Request"
+        android:textSize="16sp" />
 
-
-
-</LinearLayout>
+</RelativeLayout>

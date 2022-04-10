@@ -17,9 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys, leader;
+    Button profile, meal, phys, friends, leader;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String First = snapshot.child("First Name").getValue(String.class);
+                String First = snapshot.child("FirstName").getValue(String.class);
                 userName.setText(First);
             }
 
@@ -65,7 +66,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        phys = findViewById(R.id.physicals);
+
+
+        leader = findViewById(R.id.btnleader);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),leaderBoard.class));
+            });
+        
+              phys = findViewById(R.id.physicals);
         phys.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        leader = findViewById(R.id.btnleader);
-        leader.setOnClickListener(new View.OnClickListener() {
+        friends = findViewById(R.id.btnFriend);
+        friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),leaderBoard.class));
-                finish();
+                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
             }
         });
+
 
     }
     public void logout(View view){

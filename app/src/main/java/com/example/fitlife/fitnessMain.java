@@ -1,4 +1,3 @@
-
 package com.example.fitlife;
 
 import androidx.annotation.NonNull;
@@ -18,19 +17,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-//The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
-public class MainActivity extends AppCompatActivity {
+public class fitnessMain extends AppCompatActivity {
 
-    Button social, fit;
+    Button phys, timely, home, meal, daily;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
     DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        userName = findViewById(R.id.userP);
+        setContentView(R.layout.activity_fitness_main);
+
+        userName = findViewById(R.id.userP3);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -49,27 +49,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        social = findViewById(R.id.social);
-        social.setOnClickListener(new View.OnClickListener() {
+        phys = findViewById(R.id.physicals);
+        phys.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), socialMainPage.class));
+                startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
+            }
+        });
+
+        timely = findViewById(R.id.btnTime);
+        timely.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
+            }
+        });
+
+        meal = findViewById(R.id.btnTrack);
+        meal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
                 finish();
             }
         });
 
-        fit = findViewById(R.id.fit);
-        fit.setOnClickListener(new View.OnClickListener() {
+        home = findViewById(R.id.btnGoHome2);
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), fitnessMain.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
         });
 
-
-
+        daily = findViewById(R.id.daily);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), DailyChallenge.class));
+                finish();
+            }
+        });
     }
+
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));

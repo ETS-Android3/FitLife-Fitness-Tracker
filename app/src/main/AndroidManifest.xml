@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".fitnessMain"
+            android:exported="false" />
+        <activity
+            android:name=".socialMainPage"
+            android:exported="false" />
+        <activity
             android:name=".leaderBoard"
             android:exported="false" />
         <activity

@@ -93,4 +93,13 @@
         android:textStyle="bold"
         android:text="Send data"
         />
+    <Button
+        android:id="@+id/btnLeave"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Back To Home"
+        />
 </LinearLayout>

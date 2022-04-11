@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="26dp"
     android:orientation="vertical"
-    tools:context=".qeustionaireActivity">
+    tools:context=".leaderBoard">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,51 +23,18 @@
         android:gravity="center"
         android:textSize="25sp"
         android:layout_height="wrap_content"
-        android:text="Fitness Questionnaire"
+        android:text="Leaderboard Input"
         android:layout_marginBottom="6dp"
         />
-    <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:imeOptions="actionNext"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
 
-    <EditText
-        android:id="@+id/etHeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Height in Inches"
-        android:inputType="number"
-        android:imeOptions="actionNext"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
-    <EditText
-        android:id="@+id/etWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Weight in lbs"
-        android:inputType="number"
-        android:imeOptions="actionNext"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="What is Your sex?" />
+        android:text="How minutes did you run?" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinners1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
@@ -77,10 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="What Is Your Activity Level" />
+        android:text="How many minutes of weight lifting?" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinners2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
@@ -90,26 +57,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="What Are Your Fitness Goals?"
+        android:text="Did you meet your water intake goal?"
         />
 
     <Spinner
 
-        android:id="@+id/spinner3"
+        android:id="@+id/spinners3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
         android:contentDescription="@string/app_name"
         android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Did you meet your calorie intake goal?"
+        />
+
+    <Spinner
+        android:id="@+id/spinners4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:contentDescription="@string/app_name"
+        android:spinnerMode="dropdown" />
+
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnSendData"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
-        android:text="Register"
+        android:text="Send data"
         />
-
-
 </LinearLayout>

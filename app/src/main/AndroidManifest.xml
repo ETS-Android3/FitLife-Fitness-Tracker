@@ -12,7 +12,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".leaderBoard"
+            android:exported="false" />
+        <activity
+            android:name=".DailyChallenge"
+            android:exported="false" />
+        <activity
+            android:name=".PersonProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchFriends"
+            android:exported="false" />
+        <activity
+            android:name=".TimelyActActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimelyReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MealWaterTracking"
+            android:exported="false" />
+        <activity
+            android:name=".userProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhysicalActivity"
             android:exported="false" />
         <activity
             android:name=".qeustionaireActivity"
@@ -20,11 +50,6 @@
         <activity
             android:name=".sigginActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        //hello
-        //pop
         <activity
             android:name=".LoginActivity"
             android:exported="true">

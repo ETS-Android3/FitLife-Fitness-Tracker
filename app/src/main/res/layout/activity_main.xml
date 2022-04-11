@@ -16,7 +16,7 @@
         android:text="Fit Life"
         android:textColor="#8BC34A"
         android:textSize="50sp"
-      android:layout_marginTop="00dp"
+        android:layout_marginTop="00dp"
         />
     <TextView
         android:layout_width="match_parent"
@@ -31,67 +31,86 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome User!"
-    />
+        android:text="Welcome!"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:id="@+id/userP"
+        />
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Profile PAge"
+        android:id="@+id/profile"
+        />
+    <Button
+        android:id="@+id/btnTrack"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Meal Tracker"/>
+    <Button
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="429dp"
-        android:layout_marginBottom="0dp">
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Physical Tracker"
+        android:id="@+id/physicals"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Timley Review"
+        android:id="@+id/btnTime"
+        />
+    <Button
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Find Friends"
+        android:id="@+id/btnFriend"
+        />
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Log Out"
+        android:onClick="logout"
+        />
 
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="288dp"
-            android:layout_marginBottom="49dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:elevation="0dp"
-            android:text="Home"
-            android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btnProfile"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="150dp"
-            android:layout_marginBottom="50dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="Profile"
-            android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btnSettings"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="49dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="Settings"
-            android:textAllCaps="false" />
 
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="114dp"
-            android:layout_marginBottom="114dp"
-            android:background="@drawable/sign_in_button"
-            android:onClick="logout"
-            android:text="Log Out"
-            android:textColor="#8BC34A"
-            android:textStyle="bold" />
-    </RelativeLayout> <!--This function will allow us to drag and drop buttons based on margin locations-->
 
 </LinearLayout>

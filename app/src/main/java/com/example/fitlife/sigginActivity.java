@@ -20,19 +20,24 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 
+//Function main priority is to allow users to sign up and create an account. It will ask for name, email, password, and username so these can be stored and used later on
 public class sigginActivity extends AppCompatActivity {
     private Button login;
     private Button button;
     private FirebaseAuth mAuth;
-    private EditText editTextFirstName, editTextLastName, editTextEmail, editTextPassword;
+    private EditText editTextFirstName, editTextLastName, editTextEmail, editTextPassword, editTextUser;
     private ProgressBar progressBar;
 
     @Override
@@ -44,6 +49,8 @@ public class sigginActivity extends AppCompatActivity {
         editTextLastName = findViewById(R.id.etLastName);
         editTextEmail = findViewById(R.id.etEmail);
         editTextPassword = findViewById(R.id.etPassword);
+        editTextUser = findViewById(R.id.etUser);
+
         button = findViewById(R.id.btnNext);
         login = findViewById(R.id.btnLogin);
 
@@ -69,8 +76,9 @@ public class sigginActivity extends AppCompatActivity {
                 String first = editTextFirstName.getText().toString().trim();
                 String last = editTextLastName.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
-
-                //Checking if Data is Valid
+                String userName = editTextUser.getText().toString().trim();
+                Query userNameQuery = FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("Username").equalTo(userName);
+                //Checking if Data is not empty and meets the standards for firebase
                 if (TextUtils.isEmpty(email)) {
                     editTextEmail.setError("Email Is Required.");
                     return;
@@ -91,40 +99,63 @@ public class sigginActivity extends AppCompatActivity {
                     editTextPassword.setError("Password Must Have At Least 6 Characters");
                     return;
                 }
-                progressBar.setVisibility(View.VISIBLE);
+                if(TextUtils.isEmpty(userName)){
+                    editTextUser.setError("Username is Required");
+                    return;
+                }
 
-                //Register User To FireBase
-                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                //This is taking the users information that they have added and place them into the database
+                userNameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                    //Function checks first if the username that the person selected is unique.
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            //Storing Info In DataBase
-                            String user_id = mAuth.getCurrentUser().getUid();
-                            DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.getChildrenCount()>0){
+                            Toast.makeText(sigginActivity.this, "Choose A Different Username", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            //If the username is unique the user will be able to create there account.
+                            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                //This function adds the user information to the realtime database
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        //Storing Info In DataBase
+                                        String user_id = mAuth.getCurrentUser().getUid();
+                                        DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
-                            Map newPost = new HashMap();
-                            newPost.put("First Name", first);
-                            newPost.put("Last Name", last);
-                            newPost.put("Email", email);
-                            newPost.put("Password", password);
-                            current_user_db.setValue(newPost);
+                                        Map newPost = new HashMap();
+                                        newPost.put("FirstName", first);
+                                        newPost.put("LastName", last);
+                                        newPost.put("Username", userName);
+                                        newPost.put("Email", email);
+                                        newPost.put("Password", password);
+                                        newPost.put("Points", 0);
+                                        current_user_db.setValue(newPost);
 
 
-                            Toast.makeText(sigginActivity.this, "User Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),qeustionaireActivity.class));
-                        } else {
-                            Toast.makeText(sigginActivity.this, "Error Occured" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(sigginActivity.this, "User Created", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(),qeustionaireActivity.class));
+                                    } else {
+                                        Toast.makeText(sigginActivity.this, "Error Occurred" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                         }
                     }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
                 });
+
+                progressBar.setVisibility(View.VISIBLE);
+
 
             }
 
         });
 
     }
-
-
-
 
 }

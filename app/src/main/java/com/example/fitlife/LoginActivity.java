@@ -22,16 +22,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//The Class allows users to login to a account. If they do not know their password allows a forgot password to be placed. If no login then they are able to create a new account.
 public class LoginActivity extends AppCompatActivity {
 
     Button mLogin;
     EditText mEmail,mPassword;
-    TextView mSignUp;
+    TextView mSignUp, mForgot;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
-    Button bSettings;
-    Button bProfile;
-    Button bHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +42,50 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mLogin =findViewById(R.id.btnSignIn);
         mSignUp = findViewById(R.id.btnSignUp);
-        bSettings = findViewById(R.id.btnSettings);
-        bProfile = findViewById(R.id.btnProfile);
+
+        mForgot = findViewById(R.id.btnForgotPassword);
+
+        mForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText restMail = new EditText(view.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(view.getContext());
+                passwordResetDialog.setTitle("Reset Password?");
+                passwordResetDialog.setMessage("Enter Your Email To Receive Reset Link");
+                passwordResetDialog.setView(restMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mail = restMail.getText().toString();
+                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(LoginActivity.this, "Reset Link Sent to Email", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(LoginActivity.this, "Failed To Send Email " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //User Will Return Back to Login Menu
+                    }
+                });
+
+                passwordResetDialog.create().show();
+
+            }
+        });
+
 
         //Authentication for User Login
+        //Validates that all text fields are not left empty
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,9 +114,10 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged In!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            finish();
                         }
                         else{
-                                Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

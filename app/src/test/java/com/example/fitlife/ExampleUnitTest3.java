@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest3 extends SearchFriends {
     @Test
     public void info_isCorrect() {
-        assertEquals("LastName", "LastName".toString());
+        assertEquals("dataSnapshot", "dataSnapshot".toString());
     }
 }
 // Checks if the user input for fist name contains only strings. This will allow us to avoid

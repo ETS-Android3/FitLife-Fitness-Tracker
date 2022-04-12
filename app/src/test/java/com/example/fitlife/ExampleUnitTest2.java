@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest2 extends SearchFriends {
     @Test
     public void putExtra_isCorrect() {
-        assertEquals("user_id", "user_id".toString());
+        assertEquals("dataSnapshot", "dataSnapshot".toString());
     }
 }
 // This will check the program to see if the user input the ID correctly to avoid

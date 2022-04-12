@@ -9,7 +9,7 @@ import com.google.firebase.database.DataSnapshot;
 import androidx.annotation.Nullable;
 
 
-public class exampleUnitTest extends LoginActivity  {
+public class exampleUnitTest3 extends LoginActivity  {
     @Test
 
     public void info_isCorrect() {

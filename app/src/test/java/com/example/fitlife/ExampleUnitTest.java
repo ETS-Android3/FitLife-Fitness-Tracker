@@ -16,7 +16,7 @@ public class ExampleUnitTest extends SearchFriends {
     @Test
 
     public void info_isCorrect() {
-        assertEquals("FirstName", "FirstName".toString());
+        assertEquals("DataSnapshot", "DataSnapshot".toString());
     }
 }
 

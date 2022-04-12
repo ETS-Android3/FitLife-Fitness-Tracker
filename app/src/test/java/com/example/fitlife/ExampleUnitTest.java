@@ -4,15 +4,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-public class ExampleUnitTest {
+import com.google.firebase.database.DataSnapshot;
+
+import androidx.annotation.Nullable;
+
+
+public class exampleUnitTest extends LoginActivity  {
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+
+    public void info_isCorrect() {
+        assertEquals("mail", "mail".toString());
     }
-}
-//hello
+// checks to see if the mail is a string (the reset email option)

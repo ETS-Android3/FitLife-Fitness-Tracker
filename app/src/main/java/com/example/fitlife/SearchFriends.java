@@ -82,7 +82,7 @@ public class SearchFriends extends AppCompatActivity {
 
     }
 
-    //Onclick method when it is clicked the user will be transported to the PersonProfileActiviy class
+    //Onclick method when it is clicked the user will be transported to the PersonProfileActivity class
     private void setOnClickListener() {
         listen = new MyAdapter.RecyclerViewClickListener() {
             @Override

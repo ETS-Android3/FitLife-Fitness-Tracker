@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".GroupChallenges"
+            android:exported="false" />
+        <activity
             android:name=".fitnessMain"
             android:exported="false" />
         <activity

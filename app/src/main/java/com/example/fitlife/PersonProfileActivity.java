@@ -33,12 +33,12 @@ public class PersonProfileActivity extends AppCompatActivity {
 
     TextView first, last, email, user;
     CircleImageView profileImage;
-    Button sendFriendRequest, declineFriendRequest;
+    Button sendFriendRequest, declineFriendRequest, group, decline;
     FirebaseAuth fAuth;
     DatabaseReference reference, userRef, friendsRef;
     FirebaseDatabase fData;
     StorageReference storageReference;
-    String sendUserId, recieverUserId, currentState, saveCurrentDate;
+    String sendUserId, recieverUserId, currentState, saveCurrentDate, challenge;
 
 
     @Override
@@ -302,6 +302,10 @@ public class PersonProfileActivity extends AppCompatActivity {
 
         sendFriendRequest = findViewById(R.id.person_send_friend_request);
         declineFriendRequest = findViewById(R.id.person_decline_friend_request);
+        group = findViewById(R.id.groupChallenge);
+        decline = findViewById(R.id.declineGroup);
+
         currentState = "not_friends";
+        challenge = "not_sent";
     }
 }

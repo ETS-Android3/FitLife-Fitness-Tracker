@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".MealPlanIdeas"
+            android:exported="false" />
+        <activity
             android:name=".PersonProfileActivity"
             android:exported="false" />
         <activity
@@ -20,22 +23,21 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <receiver
             android:name=".MyAlarmReceiver"
-            android:process=":remote" >
-        </receiver>
+            android:process=":remote"></receiver>
         <receiver
             android:name=".MyAlarmReceiver"
-            android:process=":remote" >
-        </receiver>
+            android:process=":remote"></receiver>
 
         <service
             android:name=".MyTestService"
             android:exported="false" />
-
         <service
             android:name=".MyTestService"
             android:exported="false" />
+
         <activity
             android:name=".MealWaterTracking"
             android:exported="false" />

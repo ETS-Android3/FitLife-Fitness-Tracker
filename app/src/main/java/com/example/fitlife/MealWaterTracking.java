@@ -34,6 +34,7 @@ public class MealWaterTracking extends AppCompatActivity {
     DatabaseReference reference;
     TextView cals, wat, name;
     Button home;
+    Button mealideas;
 
 
     @Override
@@ -46,6 +47,7 @@ public class MealWaterTracking extends AppCompatActivity {
         String uid = user.getUid();
 
         home = findViewById(R.id.homeBtn);
+        mealideas = findViewById(R.id.ideasBtn);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);
         name = findViewById(R.id.fullName);
@@ -94,6 +96,13 @@ public class MealWaterTracking extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
+        mealideas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),MealPlanIdeas.class));
                 finish();
             }
         });

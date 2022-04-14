@@ -70,6 +70,15 @@
         android:id="@+id/water"/>
     <Button
         android:layout_height="wrap_content"
+        android:id="@+id/ideasBtn"
+        android:layout_width="128dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Meal Ideas"/>
+    <Button
+        android:layout_height="wrap_content"
         android:id="@+id/homeBtn"
         android:layout_width="128dp"
         android:layout_marginTop="16dp"
@@ -77,6 +86,7 @@
         android:textColor="#8BC34A"
         android:textStyle="bold"
         android:text="Home"/>
+
 
 
 </LinearLayout>

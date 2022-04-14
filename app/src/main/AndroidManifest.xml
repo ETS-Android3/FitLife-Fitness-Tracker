@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".leaderBoard"
+            android:exported="false" />
+        <activity
+            android:name=".DailyChallenge"
+            android:exported="false" />
+        <activity
+            android:name=".PersonProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchFriends"
+            android:exported="false" />
+        <activity
             android:name=".TimelyActActivity"
             android:exported="false" />
         <activity

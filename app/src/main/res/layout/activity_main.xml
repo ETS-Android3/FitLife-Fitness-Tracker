@@ -59,6 +59,7 @@
         android:textStyle="bold"
         android:text="Meal Tracker"/>
     <Button
+
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -74,9 +75,40 @@
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
+        android:text="Timley Review"
+        android:id="@+id/btnTime"
+        />
+    <Button
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Daily Challenge"
+        android:id="@+id/daily"
+        />
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
         android:text="Find Friends"
         android:id="@+id/btnFriend"
         />
+
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="128dp"
@@ -89,24 +121,8 @@
         android:onClick="logout"
         />
 
-    <TextView
-        android:layout_width="210dp"
-        android:layout_height="34dp"
-        android:gravity = "center"
-        android:textColor="#8BC34A"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:text="Daily Challenge:"
-        />
-    <TextView
-        android:layout_width="210dp"
-        android:layout_height="34dp"
-        android:gravity = "center"
-        android:textColor="#8BC34A"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:text="Daily Challenge:"
-        android:id="@+id/dailyChallenge"
-        />
+
+
+
 
 </LinearLayout>

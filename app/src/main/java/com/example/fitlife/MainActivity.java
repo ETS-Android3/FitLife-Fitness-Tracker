@@ -1,14 +1,14 @@
-package com.example.fitlife;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+package com.example.fitlife;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,49 +18,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
-
-
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys, friends;
-    TextView userName, dailyChallenge;
+    Button profile, meal, leader, phys, friends, timely, daily;
+    TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
     DatabaseReference reference;
-    String dailyChal;
-    Handler handler = new Handler();
-    Runnable runnableCode = new Runnable() {
-        @Override
-        public void run() {
-            String[] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
-                    "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",
-                    "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
-                    "Walk an extra 1000 steps today", "Drink more water today", "Do 10 minutes of yoga today",
-                    "Do 10 leg raises today", "Do high knees for 2 minutes today", "Do 20 lunges today"};
-            Random random = new Random();
-            int select = random.nextInt(arr.length);
-            dailyChal = arr[select];
-            dailyChallenge = findViewById(R.id.dailyChallenge);
-            dailyChallenge.setText(String.valueOf(dailyChal));
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         userName = findViewById(R.id.userP);
-
-        handler.postDelayed(runnableCode, 86400000);
-        handler.post(runnableCode);
-
-        //getDailyChallenge();
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -83,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), userProfileActivity.class));
+                startActivity(new Intent(getApplicationContext(),userProfileActivity.class));
                 finish();
             }
         });
@@ -92,8 +62,27 @@ public class MainActivity extends AppCompatActivity {
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MealWaterTracking.class));
+                startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
                 finish();
+            }
+        });
+
+        leader = findViewById(R.id.btnleader);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), leaderBoard.class));
+                finish();
+            }
+        });
+
+
+
+        friends = findViewById(R.id.btnFriend);
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
             }
         });
 
@@ -102,62 +91,32 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
-                finish();
+            }
+        });
+
+        timely = findViewById(R.id.btnTime);
+        timely.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
+            }
+        });
+
+        daily = findViewById(R.id.daily);
+        daily.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity((new Intent(getApplicationContext(), DailyChallenge.class)));
+
             }
         });
 
 
-
-
-
-
-    };
-
-    public void logout(View view) {
+    }
+    public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
 
     }
-
-    public class setDailyChallenge extends TimerTask {
-
-        @Override
-        public void run() {
-            String dailyChal;
-            String[] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
-                    "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",
-                    "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
-                    "Walk an extra 1000 steps today", "Drink more water today", "Do 10 minutes of yoga today",
-                    "Do 10 leg raises today", "Do high knees for 2 minutes today", "Do 20 lunges today"};
-            Random random = new Random();
-            int select = random.nextInt(arr.length);
-            dailyChal = arr[select];
-            dailyChallenge = findViewById(R.id.dailyChallenge);
-            dailyChallenge.setText(String.valueOf(dailyChal));
-        }
-
-    }
-
-    private Date getTomorrowMorning12AM(){
-
-        Date date12am = new java.util.Date();
-        date12am.setHours(0);
-        date12am.setMinutes(0);
-
-        return date12am;
-    }
-    public void getDailyChallenge()
-    {
-        Calendar today = Calendar.getInstance();
-        today.set(Calendar.HOUR_OF_DAY, 0);
-        today.set(Calendar.MINUTE, 0);
-        today.set(Calendar.SECOND, 0);
-        //Set time as 12 AM
-        Timer timer = new Timer();
-        timer.schedule(new setDailyChallenge(), getTomorrowMorning12AM(), 1000*60*60*24);
-    }
-
-
-
 }

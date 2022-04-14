@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//The Class allows users to login to a account. If they do not know their password allows a forgot password to be placed. If no login then they are able to create a new account.
 public class LoginActivity extends AppCompatActivity {
 
     Button mLogin;
@@ -29,9 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView mSignUp, mForgot;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
-    Button bSettings;
-    Button bProfile;
-    Button bHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,8 +84,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
         //Authentication for User Login
+        //Validates that all text fields are not left empty
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

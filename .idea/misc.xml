@@ -4,28 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1735" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.332" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1735" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/login_bg.xml" value="0.332" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/sign_in_button.xml" value="0.332" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_add_friends.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_daily_challenge.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_find_friends.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leader_board.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leaderboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_meal_water_tracking.xml" value="0.2798913043478261" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_person_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_physical.xml" value="0.2798913043478261" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_qeustionaire.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_search_friends.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_siggin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_act.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_review.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_user_profile.xml" value="0.2798913043478261" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/all_user_display.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/single_view_find_friend.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1735" />
         <entry key="..\:/Users/17348/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1735" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_leaderboard.xml" value="0.25076923076923074" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_login.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_main.xml" value="0.25076923076923074" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_meal_water_tracking.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_physical.xml" value="0.25076923076923074" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_qeustionaire.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_siggin.xml" value="0.25076923076923074" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_act.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timely_review.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_timer.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/activity_user_profile.xml" value="0.2546875" />
-        <entry key="..\:/Users/abidu/AndroidStudioProjects/FitLife-Fitness-Tracker/app/src/main/res/layout/row.xml" value="0.2546875" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1875" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/login_bg.xml" value="0.1875" />
         <entry key="..\:/Users/emilm/StudioProjects/FitLife-Fitness-Tracker/app/src/main/res/drawable/sign_in_button.xml" value="0.1875" />

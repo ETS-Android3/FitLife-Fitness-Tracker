@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         mLogin =findViewById(R.id.btnSignIn);
         mSignUp = findViewById(R.id.btnSignUp);
-      
+
         mForgot = findViewById(R.id.btnForgotPassword);
 
         mForgot.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
         //Authentication for User Login
         //Validates that all text fields are not left empty
         mLogin.setOnClickListener(new View.OnClickListener() {
@@ -115,9 +114,10 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged In!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            finish();
                         }
                         else{
-                                Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

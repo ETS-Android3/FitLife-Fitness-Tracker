@@ -28,20 +28,21 @@ import java.util.HashMap;
 
 public class leaderBoard extends AppCompatActivity {
 
-    Button leader, leave;
-    Spinner runningDropdown, weightsDropdown, waterDropdown, calorieDropdown;
+    public Button leader, leave;
+    public Spinner runningDropdown, weightsDropdown, waterDropdown, calorieDropdown;
 
-    int runPoints= 0 ;
-    int weightPoints= 0 ;
-    int waterPoints=0;
-    int caloriePoints=0;
+    private int runPoints;
+    private int weightPoints;
+    private int waterPoints;
+    private int caloriePoints;
 
-    int totalPoints;
-    String calorieDrop, weightDrop, watersDrop, running;
-    String upCal, upWeight, upWater, upRun;
-    DatabaseReference reference, getData, update, leaving;
-    FirebaseAuth fAuth;
-    FirebaseUser user;
+    private int totalPoints;
+    private String calorieDrop, weightDrop, watersDrop, running;
+    private String upCal, upWeight, upWater, upRun;
+
+    public DatabaseReference reference, getData, update;
+    public FirebaseAuth fAuth;
+    public FirebaseUser user;
 
     // Running for 15 mins increments = 5 points
     // lifting for 30 mins increments = 5 points
@@ -187,14 +188,14 @@ public class leaderBoard extends AppCompatActivity {
 
     }
 
-    void addTotalPoints() {
+    public void addTotalPoints() {
         int x = totalPoints;
         int temp = waterPoints + caloriePoints + weightPoints + runPoints + totalPoints;
         totalPoints = temp;
 
     }
 
-    int addWaterPoints(String upWater) {
+    public int addWaterPoints(String upWater) {
         if (upWater.equals("I almost reached my goal")) {
             waterPoints += 3;
 
@@ -206,7 +207,7 @@ public class leaderBoard extends AppCompatActivity {
         return waterPoints;
     }
 
-    int addCaloriePoints(String upCal) {
+    public int addCaloriePoints(String upCal) {
         if (upCal.equals("I almost reached my calorie goal")) {
             caloriePoints += 3;
         }
@@ -217,24 +218,26 @@ public class leaderBoard extends AppCompatActivity {
         return  caloriePoints;
     }
 
-    int addWeightPoints(String upWeight) {
+    public int addWeightPoints(String upWeight) {
+        int weightPoints=0;
         if (upWeight.equals("0 mins")) {
-            weightPoints += 0;
+            weightPoints = 0;
         }
         else if (upWeight.equals("15 mins")) {
-            weightPoints += 5;
+            weightPoints = 5;
         }
         else if(upWeight.equals("30 mins")) {
-            weightPoints += 10;
+            weightPoints = 10;
         }
         else if (upWeight.equals("45 mins")) {
-            weightPoints += 15;
+            weightPoints = 15;
         }
+        this.weightPoints = weightPoints;
         return weightPoints;
     }
 
     //This Function adds up the values for
-    int addRunPoints(String upRun) {
+    public int addRunPoints(String upRun) {
         if (upRun.equals("0 mins")) {
             runPoints += 0;
         }
@@ -249,4 +252,8 @@ public class leaderBoard extends AppCompatActivity {
         }
         return runPoints;
     }
+
+
+
+
 }

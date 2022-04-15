@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".UserFeedback"
+            android:exported="false" />
+        <activity
             android:name=".leaderBoard"
             android:exported="false" />
         <activity

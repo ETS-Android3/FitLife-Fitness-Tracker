@@ -94,4 +94,4 @@ public class SearchFriends extends AppCompatActivity {
             }
         };
     }
-}a
+}

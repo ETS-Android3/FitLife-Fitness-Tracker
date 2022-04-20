@@ -57,26 +57,26 @@ public class MealWaterTracking extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                firstName = dataSnapshot.child("First Name").getValue(String.class);
-                lastName = dataSnapshot.child("Last Name").getValue(String.class);
+                firstName = dataSnapshot.child("FirstName").getValue(String.class);
+                lastName = dataSnapshot.child("LastName").getValue(String.class);
                 name.setText(firstName + " " + lastName);
 
-                String userHeight = dataSnapshot.child("User Info").child("Height").getValue(String.class);
+                String userHeight = dataSnapshot.child("UserInfo").child("Height").getValue(String.class);
                 height = Double.parseDouble(userHeight);
 
-                String userWeight = dataSnapshot.child("User Info").child("Weight").getValue(String.class);
+                String userWeight = dataSnapshot.child("UserInfo").child("Weight").getValue(String.class);
                 weight = Integer.parseInt(userWeight);
 
-                String userAge = dataSnapshot.child("User Info").child("Age").getValue(String.class);
+                String userAge = dataSnapshot.child("UserInfo").child("Age").getValue(String.class);
                 age = Integer.parseInt(userAge);
 
-                String sex = dataSnapshot.child("User Info").child("Sex").getValue().toString();
+                String sex = dataSnapshot.child("UserInfo").child("Sex").getValue().toString();
                 gender = sex;
 
-                String activity = dataSnapshot.child("User Info").child("Activity").getValue().toString();
+                String activity = dataSnapshot.child("UserInfo").child("Activity").getValue().toString();
                 activityLevel = activity;
 
-                String goal = dataSnapshot.child("User Info").child("Goal").getValue().toString();
+                String goal = dataSnapshot.child("UserInfo").child("Goal").getValue().toString();
                 preference = goal;
 
                 getBMR(height, gender,  weight, age, activityLevel, preference, cals);

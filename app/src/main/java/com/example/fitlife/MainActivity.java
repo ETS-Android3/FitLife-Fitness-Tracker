@@ -1,13 +1,14 @@
+
 package com.example.fitlife;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -17,16 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, phys, friends;
-    TextView userName, dailyChallenge;
+    Button profile, meal, leader, phys, friends, timely;
+    TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
     DatabaseReference reference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), userProfileActivity.class));
+                startActivity(new Intent(getApplicationContext(),userProfileActivity.class));
                 finish();
             }
         });
@@ -63,8 +62,27 @@ public class MainActivity extends AppCompatActivity {
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MealWaterTracking.class));
+                startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
                 finish();
+            }
+        });
+
+        leader = findViewById(R.id.btnleader);
+        leader.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), leaderBoard.class));
+                finish();
+            }
+        });
+
+
+
+        friends = findViewById(R.id.btnFriend);
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
             }
         });
 
@@ -73,26 +91,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
-                finish();
             }
         });
 
-        friends = findViewById(R.id.btnFriend);
-        friends.setOnClickListener(new View.OnClickListener() {
+        timely = findViewById(R.id.btnTime);
+        timely.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SearchFriends.class));
+                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
             }
         });
 
-    }
 
-    public void logout(View view) {
+    }
+    public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
 
     }
-
-
 }

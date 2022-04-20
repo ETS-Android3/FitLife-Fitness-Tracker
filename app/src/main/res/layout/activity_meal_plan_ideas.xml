@@ -16,33 +16,33 @@
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="30sp" />
+        android:textSize="35sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Overnight Oats"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/oats" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breakfast Bagel"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/bagel" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breakfast Smoothie"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/smoothie" />
     <TextView
         android:layout_width="wrap_content"
@@ -51,34 +51,34 @@
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="30sp"
+        android:textSize="35sp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chicken Breast with Rice"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/chicken"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salmon with Rice"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/salmon"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text= "Speciality Pastas"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/pasta"/>
     <TextView
         android:layout_width="wrap_content"
@@ -87,39 +87,39 @@
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="30sp" />
+        android:textSize="35sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Steak with Potatoes"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/steak"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Protein Pizza"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/pizza"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="End of Day Protein Shake"
-        android:textColor="#8BC34A"
+        android:textColor="#000000"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/shake"/>
 
 
     <Button
         android:layout_height="wrap_content"
-        android:id="@+id/ideasBtn"
+        android:id="@+id/mealBtn"
         android:layout_width="128dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
@@ -128,7 +128,7 @@
         android:text="Meal Tracker"/>
     <Button
         android:layout_height="wrap_content"
-        android:id="@+id/homeBtn"
+        android:id="@+id/homeButton"
         android:layout_width="128dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"

@@ -47,11 +47,10 @@ public class MealWaterTracking extends AppCompatActivity {
         String uid = user.getUid();
 
         home = findViewById(R.id.homeBtn);
-        mealideas = findViewById(R.id.ideasBtn);
+        mealideas = findViewById(R.id.ideasButton);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);
         name = findViewById(R.id.fullName);
-        home = findViewById(R.id.homeBtn);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
@@ -91,6 +90,14 @@ public class MealWaterTracking extends AppCompatActivity {
 
             }
         });
+        //Create button to go to meal ideas
+        mealideas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MealPlanIdeas.class));
+                finish();
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,13 +106,7 @@ public class MealWaterTracking extends AppCompatActivity {
                 finish();
             }
         });
-        mealideas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MealPlanIdeas.class));
-                finish();
-            }
-        });
+
 
 
     }

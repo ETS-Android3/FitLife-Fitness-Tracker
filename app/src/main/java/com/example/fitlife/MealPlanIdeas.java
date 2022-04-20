@@ -16,7 +16,7 @@ public class MealPlanIdeas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_plan_ideas);
-        home = findViewById(R.id.homeBtn);
+        home = findViewById(R.id.homeButton);
         oats = findViewById(R.id.oats);
         bagel = findViewById(R.id.bagel);
         smoothie = findViewById(R.id.smoothie);
@@ -27,7 +27,7 @@ public class MealPlanIdeas extends AppCompatActivity {
         pizza = findViewById(R.id.pizza);
         shake = findViewById(R.id.shake);
 
-
+//Create link activity for breakfast
         oats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +49,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create link activity for lunch ideas
         chicken.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,6 +74,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create link activity for dinner meals
         steak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +99,8 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
-        meal = findViewById(R.id.btnTrack);
+        //Create buttons to go back to home and meal tracker
+        meal = findViewById(R.id.mealBtn);
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

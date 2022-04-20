@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, leader, phys, friends, timely, daily;
+    Button profile, meal, leader, phys, friends, timely, daily, table;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -110,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        table = findViewById(R.id.table);
+            table.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity((new Intent(getApplicationContext(), tableList.class)));
+                }
+            });
 
 
     }

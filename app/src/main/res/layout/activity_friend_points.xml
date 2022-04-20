@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="50dp"
+    tools:context=".friendPoints">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        tools:srcCompat="@mipmap/ic_launcher" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/myUser2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Username"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/firstName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="First Name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Last Name"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:id="@+id/LastName2"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Email"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:id="@+id/email2"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Points"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:id="@+id/friendpoints"
+            android:textAlignment="center"/>
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/homeBtn11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="#8BC34A" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

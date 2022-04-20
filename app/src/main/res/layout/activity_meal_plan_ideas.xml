@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="26dp"
     android:orientation="vertical"
-    tools:context=".MealWaterTracking">
+    tools:context=".MealPlanIdeas">
 
     <TextView
         android:layout_width="wrap_content"

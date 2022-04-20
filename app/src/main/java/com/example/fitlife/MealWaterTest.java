@@ -24,11 +24,11 @@ public class MealWaterTest {
     public double getBMR(double height, String gender, int weight, int age)
     {
 
-        if(gender.equals("Male"))
+        if(gender.equals("male"))
         {
             BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
         }
-        else if (gender.equals("Female"))
+        else if (gender.equals("female"))
         {
             BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
         }

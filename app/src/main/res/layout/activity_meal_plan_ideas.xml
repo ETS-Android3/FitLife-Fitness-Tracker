@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:xlink="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login_bg"
     android:gravity="center"
     android:padding="26dp"
@@ -22,35 +21,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Overnight Oats"
-        xlink:type="simple"
-        xlink:href="https://downshiftology.com/recipes/overnight-oats/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/oats" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breakfast Bagel"
-        xlink:type="simple"
-        xlink:href="https://themom100.com/recipe/breakfast-bagel-sandwich/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/bagel" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Breakfast Smoothie"
-        xlink:type="simple"
-        xlink:href="https://kristineskitchenblog.com/21-healthy-breakfast-smoothie-recipes/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/smoothie" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,40 +51,35 @@
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chicken Breast with Rice"
-        xlink:type="simple"
-        xlink:href="https://www.campbells.com/recipes/one-dish-chicken-rice-bake/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/chicken"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salmon with Rice"
-        xlink:type="simple"
-        xlink:href="https://www.skinnytaste.com/salmon-fried-rice/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/salmon"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text= "Speciality Pastas"
-        xlink:type="simple"
-        xlink:href="https://www.foodandwine.com/pasta-noodles/pasta"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/pasta"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,35 +92,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Steak with Potatoes"
-        xlink:type="simple"
-        xlink:href="https://www.eatwell101.com/garlic-butter-steak-and-potatoes-recipe"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/steak"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Protein Pizza"
-        xlink:type="simple"
-        xlink:href="https://fithappyfoodie.com/2019/05/high-protein-low-calorie-pizza-400-cal-meal.html"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/pizza"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="End of Day Protein Shake"
-        xlink:type="simple"
-        xlink:href="https://www.allrecipes.com/recipe/245163/the-best-post-workout-shake/"
-        xlink:show="new"
         android:textColor="#8BC34A"
         android:layout_marginBottom="10dp"
         android:background="@drawable/sign_in_button"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/shake"/>
 
 
     <Button

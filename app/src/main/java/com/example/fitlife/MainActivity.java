@@ -93,6 +93,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
             }
         });
+      
+        Button btnFeedBack = findViewById(R.id.btnFeedBack);
+        btnFeedBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FeedBackActivity.class));
+                finish();
+            }
+        });
         // Timely review button (calendar)
         timely = findViewById(R.id.btnTime);
         timely.setOnClickListener(new View.OnClickListener() {

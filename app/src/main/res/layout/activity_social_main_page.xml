@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
     android:gravity="center"
     android:padding="26dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".socialMainPage">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Fit Life"
+        android:text="Fit Life - Social"
         android:textColor="#8BC34A"
         android:textSize="50sp"
         android:layout_marginTop="00dp"
@@ -37,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User"
-        android:id="@+id/userP"
+        android:id="@+id/userP2"
         />
     <Button
         android:layout_width="128dp"
@@ -46,21 +45,63 @@
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
-        android:text="Fit Life Social"
-        android:id="@+id/social"
+        android:text="Profile PAge"
+        android:id="@+id/profile"
         />
-    <Button
-        android:id="@+id/fit"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Fit Life Fitness"/>
+
 
     <Button
-        android:id="@+id/btnLogOut"
+        android:id="@+id/btnleader"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="leader board"/>
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Point List"
+        android:id="@+id/pointList"
+        />
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Find Friends"
+        android:id="@+id/btnFriend"
+        />
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="User FeedBack"
+        android:id="@+id/feedBack"
+        />
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Home"
+        android:id="@+id/btnGoHome2"
+        />
+    <Button
+        android:id="@+id/btnLogOut3"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

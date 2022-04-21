@@ -23,21 +23,21 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 //This class takes Creates a recyclerview where users can see all the users within the application. From there the user can click on the item list and then be taken to the Person
 //profile activity
-public class SearchFriends extends AppCompatActivity {
+public class tableList extends AppCompatActivity {
     ValueEventListener listener;
     DatabaseReference reference;
-    List<Item> mUploads;
+    List<item2> mUploads;
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
+    leaderboardAdapter myAdapter;
     Button button;
-    MyAdapter.RecyclerViewClickListener listen;
+    leaderboardAdapter.RecyclerViewClickListener listen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_friends);
+        setContentView(R.layout.activity_table);
 
-        button = findViewById(R.id.homeBtn3);
+        button = findViewById(R.id.homeBtn10);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,11 +49,11 @@ public class SearchFriends extends AppCompatActivity {
         mUploads = new ArrayList<>();
 
         setOnClickListener();
-        recyclerView = findViewById(R.id.searchResultList);
+        recyclerView = findViewById(R.id.searchResultList2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.smoothScrollToPosition(0);
-        myAdapter = new MyAdapter(mUploads, listen);
+        myAdapter = new leaderboardAdapter(mUploads, listen);
 
         recyclerView.setAdapter(myAdapter);
 
@@ -68,10 +68,8 @@ public class SearchFriends extends AppCompatActivity {
                     String FirstName = dataSnapshot.child("FirstName").getValue().toString();
                     String LastName = dataSnapshot.child("LastName").getValue().toString();
                     String Username = dataSnapshot.child("Username").getValue().toString();
-                    String Email = dataSnapshot.child("Email").getValue().toString();
-                    String Password = dataSnapshot.child("Password").getValue().toString();
                     String Key = dataSnapshot.getKey();
-                    mUploads.add(new Item(FirstName, LastName, Username, Key));
+                    mUploads.add(new item2(FirstName, LastName, Username, Key));
                 }
                 myAdapter.notifyDataSetChanged();
             }
@@ -84,12 +82,12 @@ public class SearchFriends extends AppCompatActivity {
 
     }
 
-    //Onclick method when it is clicked the user will be transported to the PersonProfileActivity class
+    //Onclick method when it is clicked the user will be transported to the PersonProfileActiviy class
     private void setOnClickListener() {
-        listen = new MyAdapter.RecyclerViewClickListener() {
+        listen = new leaderboardAdapter.RecyclerViewClickListener() {
             @Override
             public void onClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(), PersonProfileActivity.class);
+                Intent intent = new Intent(getApplicationContext(), friendPoints.class);
                 String user_id = mUploads.get(position).getKey();
                 intent.putExtra("user_id", user_id);
                 startActivity(intent);

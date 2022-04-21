@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,13 +8,13 @@
     android:gravity="center"
     android:padding="26dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".fitnessMain">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Fit Life"
+        android:text="Fit Life - Fitness"
         android:textColor="#8BC34A"
         android:textSize="50sp"
         android:layout_marginTop="00dp"
@@ -37,30 +38,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User"
-        android:id="@+id/userP"
+        android:id="@+id/userP3"
         />
-    <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Fit Life Social"
-        android:id="@+id/social"
-        />
-    <Button
-        android:id="@+id/fit"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Fit Life Fitness"/>
 
     <Button
-        android:id="@+id/btnLogOut"
+        android:id="@+id/btnTrack"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Meal Tracker"/>
+    <Button
+
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Physical Tracker"
+        android:id="@+id/physicals"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Timley Review"
+        android:id="@+id/btnTime"
+        />
+    <Button
+
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Daily Challenge"
+        android:id="@+id/daily"/>
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Home"
+        android:id="@+id/btnGoHome2"
+        />
+
+    <Button
+        android:id="@+id/btnLogOut2"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -70,9 +102,5 @@
         android:text="Log Out"
         android:onClick="logout"
         />
-
-
-
-
 
 </LinearLayout>

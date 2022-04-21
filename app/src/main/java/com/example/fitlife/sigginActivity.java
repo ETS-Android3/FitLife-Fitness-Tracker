@@ -122,6 +122,7 @@ public class sigginActivity extends AppCompatActivity {
                                         //Storing Info In DataBase
                                         String user_id = mAuth.getCurrentUser().getUid();
                                         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                                        DatabaseReference leader_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("LeaderData");
 
                                         Map newPost = new HashMap();
                                         newPost.put("FirstName", first);
@@ -131,6 +132,14 @@ public class sigginActivity extends AppCompatActivity {
                                         newPost.put("Password", password);
                                         newPost.put("Points", 0);
                                         current_user_db.setValue(newPost);
+
+                                        Map leader = new HashMap();
+                                        leader.put("Calorie", "Null");
+                                        leader.put("Run", "Null");
+                                        leader.put("Water", "Null");
+                                        leader.put("Weights", "Null");
+                                        leader_db.setValue(leader);
+
 
 
                                         Toast.makeText(sigginActivity.this, "User Created", Toast.LENGTH_SHORT).show();

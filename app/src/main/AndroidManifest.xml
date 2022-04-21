@@ -14,6 +14,12 @@
         <activity android:name=".MealPlanIdeas"
             android:exported="false" />
         <activity
+            android:name=".tableList"
+            android:exported="false"/>
+        <activity
+            android:name=".friendPoints"
+            android:exported="false" />
+        <activity
             android:name=".leaderBoard"
             android:exported="false" />
         <activity

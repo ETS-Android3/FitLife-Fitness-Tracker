@@ -91,6 +91,7 @@ public class PhysicalActivity extends AppCompatActivity {
 
             }
         });
+        // Button for stopwatch stop and start running
         startStopBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override

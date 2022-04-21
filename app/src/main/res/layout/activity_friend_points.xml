@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="50dp"
     android:orientation="vertical"
-    tools:context=".PersonProfileActivity">
+    android:paddingTop="50dp"
+    tools:context=".friendPoints">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/friendImage"
+        android:id="@+id/imageView2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_centerHorizontal="true"
         tools:srcCompat="@mipmap/ic_launcher" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/friendImage"
         android:orientation="vertical"
-        android:paddingTop="10dp"
-        android:id="@+id/linProf">
+        android:paddingTop="10dp">
 
         <TextView
-            android:id="@+id/friendUser"
+            android:id="@+id/myUser2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
@@ -34,9 +30,8 @@
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="normal" />
-
         <TextView
-            android:id="@+id/friendFirst"
+            android:id="@+id/firstName2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
@@ -54,7 +49,7 @@
             android:textSize="25dp"
             android:textColor="@color/black"
             android:textStyle="normal"
-            android:id="@+id/friendLast"
+            android:id="@+id/LastName2"
             android:textAlignment="center"/>
         <TextView
             android:layout_width="match_parent"
@@ -64,51 +59,38 @@
             android:textSize="25dp"
             android:textColor="@color/black"
             android:textStyle="normal"
-            android:id="@+id/friendEmail"
-            android:textAlignment="center" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="200px"
-            android:layout_height="200px"
-            android:layout_gravity="center"
-            android:src="@drawable/friends" />
+            android:id="@+id/email2"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:text="Points"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:id="@+id/friendpoints"
+            android:textAlignment="center"/>
+            />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/person_send_friend_request"
-        android:layout_width="230dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/groupChallenge"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="#8BC34A"
-        android:text="Send Friend Request"
-        android:textSize="16sp" />
+        android:layout_marginTop="50dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/person_decline_friend_request"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/person_send_friend_request"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="#EC7676"
-        android:text="Decline Friend Request"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/groupChallenge"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linProf"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:background="#4BBFEC"
-        android:text="Go to Group Challenge"
-        android:textSize="16sp" />
+        <Button
+            android:id="@+id/homeBtn11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textColor="#8BC34A" />
 
 
+    </RelativeLayout>
 
-</RelativeLayout>
+
+</LinearLayout>

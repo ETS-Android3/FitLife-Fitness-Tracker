@@ -18,5 +18,3 @@ public class ExampleUnitTest {
     }
 
 }
-//Test
-//hello

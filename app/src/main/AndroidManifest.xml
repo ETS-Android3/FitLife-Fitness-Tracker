@@ -20,6 +20,15 @@
             android:name=".friendPoints"
             android:exported="false" />
         <activity
+            android:name=".GroupChallenges"
+            android:exported="false" />
+        <activity
+            android:name=".fitnessMain"
+            android:exported="false" />
+        <activity
+            android:name=".socialMainPage"
+            android:exported="false" />
+        <activity
             android:name=".leaderBoard"
             android:exported="false" />
         <activity

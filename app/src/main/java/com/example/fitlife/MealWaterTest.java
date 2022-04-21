@@ -21,7 +21,7 @@ public class MealWaterTest {
         this.preference = preference;
     }
 
-    public double getBMR(double height, String gender, int weight, int age)
+    public double getBMR(String gender)
     {
 
         if(gender.equals("male"))
@@ -75,11 +75,11 @@ public class MealWaterTest {
             totalCalories = totalCalories + 250;
 
         }
-       return totalCalories;
+        return totalCalories;
 
     }
     //test3
-    public double setWaterIntakeLevel(int weight)
+    public double setWaterIntakeLevel()
     {
 
         totalWater = weight/2;

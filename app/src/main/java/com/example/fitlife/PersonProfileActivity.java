@@ -3,6 +3,7 @@ package com.example.fitlife;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -33,12 +35,12 @@ public class PersonProfileActivity extends AppCompatActivity {
 
     TextView first, last, email, user;
     CircleImageView profileImage;
-    Button sendFriendRequest, declineFriendRequest;
+    Button sendFriendRequest, declineFriendRequest, group;
     FirebaseAuth fAuth;
     DatabaseReference reference, userRef, friendsRef;
     FirebaseDatabase fData;
     StorageReference storageReference;
-    String sendUserId, recieverUserId, currentState, saveCurrentDate;
+    String sendUserId, recieverUserId, currentState, saveCurrentDate, challenge;
 
 
     @Override
@@ -86,6 +88,9 @@ public class PersonProfileActivity extends AppCompatActivity {
         declineFriendRequest.setVisibility(View.INVISIBLE);
         declineFriendRequest.setEnabled(false);
 
+        group.setVisibility(View.INVISIBLE);
+        group.setEnabled(false);
+
         if(!sendUserId.equals(recieverUserId)){
             sendFriendRequest.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,6 +116,7 @@ public class PersonProfileActivity extends AppCompatActivity {
         else{
             declineFriendRequest.setVisibility(View.INVISIBLE);
             sendFriendRequest.setVisibility(View.INVISIBLE);
+            group.setVisibility(View.INVISIBLE);
         }
 
     }
@@ -131,6 +137,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                                 declineFriendRequest.setVisibility(View.INVISIBLE);
                                 declineFriendRequest.setEnabled(false);
+
+                                group.setVisibility(View.INVISIBLE);
+                                group.setEnabled(false);
                             }
                         }
                     });
@@ -144,13 +153,17 @@ public class PersonProfileActivity extends AppCompatActivity {
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
         saveCurrentDate = currentDate.format(calForDate.getTime());
+        HashMap newInput = new HashMap();
+        newInput.put("date", saveCurrentDate);
+        newInput.put("array", "Null");
+        newInput.put("counter", 0);
 
         //deletes the friend request node within the database and also creates a new node of friends and updates the users to that.
-        friendsRef.child(sendUserId).child(recieverUserId).child("date").setValue(saveCurrentDate).addOnCompleteListener(new OnCompleteListener<Void>() {
+        friendsRef.child(sendUserId).child(recieverUserId).setValue(newInput).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    friendsRef.child(recieverUserId).child(sendUserId).child("date").setValue(saveCurrentDate).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    friendsRef.child(recieverUserId).child(sendUserId).setValue(newInput).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
@@ -168,6 +181,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                                                         declineFriendRequest.setVisibility(View.INVISIBLE);
                                                         declineFriendRequest.setEnabled(false);
+
+                                                        group.setVisibility(View.VISIBLE);
+                                                        group.setEnabled(true);
                                                     }
                                                 }
                                             });
@@ -198,6 +214,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                                 declineFriendRequest.setVisibility(View.INVISIBLE);
                                 declineFriendRequest.setEnabled(false);
+
+                                group.setVisibility(View.INVISIBLE);
+                                group.setEnabled(false);
                             }
                         }
                     });
@@ -222,6 +241,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                         declineFriendRequest.setVisibility(View.INVISIBLE);
                         declineFriendRequest.setEnabled(false);
+
+                        group.setVisibility(View.INVISIBLE);
+                        group.setEnabled(false);
                     }
                     else if(request_type.equals("received")){
                         currentState = "request_received";
@@ -236,6 +258,9 @@ public class PersonProfileActivity extends AppCompatActivity {
                                 CancelFriendRequest();
                             }
                         });
+
+                        group.setVisibility(View.INVISIBLE);
+                        group.setEnabled(false);
                     }
 
                 }
@@ -249,6 +274,16 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                                 declineFriendRequest.setVisibility(View.INVISIBLE);
                                 declineFriendRequest.setEnabled(false);
+
+                                group.setVisibility(View.VISIBLE);
+                                group.setEnabled(true);
+
+                                group.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        GroupChall();
+                                    }
+                                });
 
                             }
                         }
@@ -268,6 +303,13 @@ public class PersonProfileActivity extends AppCompatActivity {
         });
     }
 
+    private void GroupChall() {
+        Intent intent = new Intent(getApplicationContext(), GroupChallenges.class);
+        String friend_id = recieverUserId;
+        intent.putExtra("friend_id", friend_id);
+        startActivity(intent);
+    }
+
     //This Function creates a node within the database to show that a user has sent a friend request or not.
     private void SendFriendRequestToPerson() {
         reference.child(sendUserId).child(recieverUserId).child("request_type").setValue("sent").addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -284,6 +326,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
                                 declineFriendRequest.setVisibility(View.INVISIBLE);
                                 declineFriendRequest.setEnabled(false);
+
+                                group.setVisibility(View.INVISIBLE);
+                                group.setEnabled(false);
                             }
                         }
                     });
@@ -291,6 +336,7 @@ public class PersonProfileActivity extends AppCompatActivity {
             }
         });
     }
+
 
     //Initializes the different buttons and textview parts of the application
     private void IntializeFields() {
@@ -302,6 +348,9 @@ public class PersonProfileActivity extends AppCompatActivity {
 
         sendFriendRequest = findViewById(R.id.person_send_friend_request);
         declineFriendRequest = findViewById(R.id.person_decline_friend_request);
+        group = findViewById(R.id.groupChallenge);
+
         currentState = "not_friends";
+        challenge = "not_sent";
     }
 }

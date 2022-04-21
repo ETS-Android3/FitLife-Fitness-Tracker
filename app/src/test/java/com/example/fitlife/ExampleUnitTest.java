@@ -1,7 +1,5 @@
 package com.example.fitlife;
 
-import org.testng.annotations.Test;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 

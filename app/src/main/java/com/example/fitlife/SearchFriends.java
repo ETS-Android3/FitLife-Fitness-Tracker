@@ -68,8 +68,10 @@ public class SearchFriends extends AppCompatActivity {
                     String FirstName = dataSnapshot.child("FirstName").getValue().toString();
                     String LastName = dataSnapshot.child("LastName").getValue().toString();
                     String Username = dataSnapshot.child("Username").getValue().toString();
+                    String Email = dataSnapshot.child("Email").getValue().toString();
+                    String Password = dataSnapshot.child("Password").getValue().toString();
                     String Key = dataSnapshot.getKey();
-                    mUploads.add(new Item(FirstName, LastName, Username, Key));
+                    mUploads.add(new Item(FirstName, LastName, Username, Key,Email,Password));
                 }
                 myAdapter.notifyDataSetChanged();
             }

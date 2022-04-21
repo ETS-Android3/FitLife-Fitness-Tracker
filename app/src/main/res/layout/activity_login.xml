@@ -12,73 +12,81 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="50sp"
         android:layout_height="wrap_content"
-        android:textColor="#8BC34A"
+        android:gravity="center"
         android:text="Fit Life"
+        android:textColor="#000000"
+        android:textSize="50sp"
 
         />
+
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sign in with Email"
-        android:inputType="textEmailAddress"
-        android:imeOptions="actionNext"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="16dp"
-        android:textSize="25sp"
-        />
+        android:hint="Sign in with Email"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:textColor="#E91E63"
+        android:textColorLink="#E91E63"
+        android:textSize="25sp" />
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="28dp"
-        android:textSize="25sp"
+        android:hint="Enter Password"
         android:imeOptions="actionDone"
-        />
+        android:inputType="textPassword"
+        android:textColor="#E91E63"
+        android:textSize="25sp" />
+
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:background="@color/black"
         android:text="Sign in"
-        />
+        android:textColor="#00BCD4"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't Have an Account? "
             android:layout_margin="16dp"
-            />
+            android:text="Don't Have an Account? "
+            android:textColorLink="#3F51B5"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
 
             android:text="Sign Up!"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/btnForgotPassword"
         android:layout_width="157dp"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:elevation="0dp"
         android:text="Forgot Password?"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        android:textColor="#9C27B0"
+        android:textSize="20sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"

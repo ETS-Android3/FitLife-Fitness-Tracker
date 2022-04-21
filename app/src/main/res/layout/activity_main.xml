@@ -12,124 +12,125 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="00dp"
         android:gravity="center"
         android:text="Fit Life"
-        android:textColor="#8BC34A"
-        android:textSize="50sp"
-        android:layout_marginTop="00dp"
-        />
+        android:textColor="#F3000000"
+        android:textSize="50sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="00dp"
         android:gravity="center"
         android:text="Meet all of your fitness goals"
-        android:textColor="#8BC34A"
-        android:textSize="20sp"
-        android:layout_marginBottom="00dp"
-        />
+        android:textColor="#F3000000"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome!"
-        />
+        android:textColorLink="#F3000000" />
+
     <TextView
+        android:id="@+id/userP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="User"
-        android:id="@+id/userP"
-        />
+        android:textColorLink="#F3000000" />
+
     <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Profile PAge"
         android:id="@+id/profile"
-        />
-    <Button
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Points list"
+        android:background="@color/black"
+        android:text="Profile PAge"
+        android:textColor="#2196F3"
+        android:textStyle="bold" />
+
+    <Button
         android:id="@+id/table"
-        />
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        android:text="Points list"
+        android:textColor="#9C27B0"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnTrack"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Meal Tracker"/>
+        android:background="@color/black"
+        android:text="Meal Tracker"
+        android:textColor="#E91E63"
+        android:textStyle="bold" />
+
     <Button
 
+        android:id="@+id/physicals"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:background="@color/black"
         android:text="Physical Tracker"
-        android:id="@+id/physicals"/>
+        android:textColor="#4CAF50"
+        android:textStyle="bold" />
+
     <Button
+        android:id="@+id/btnTime"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:background="@color/black"
         android:text="Timley Review"
-        android:id="@+id/btnTime"
-        />
+        android:textColor="#FFEB3B"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnleader"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
+        android:background="@color/black"
+        android:text="leader board"
         android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="leader board"/>
-    <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Daily Challenge"
-        android:id="@+id/daily"
-        />
+        android:textStyle="bold" />
 
     <Button
+        android:id="@+id/daily"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Find Friends"
+        android:background="@color/black"
+        android:text="Daily Challenge"
+        android:textColor="#009688"
+        android:textStyle="bold" />
+
+    <Button
         android:id="@+id/btnFriend"
-        />
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/black"
+        android:text="Find Friends"
+        android:textColor="#F44336"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Log Out"
+        android:background="@color/black"
         android:onClick="logout"
-        />
+        android:text="Log Out"
+        android:textColor="#FFC107"
+        android:textStyle="bold" />
 
 
 

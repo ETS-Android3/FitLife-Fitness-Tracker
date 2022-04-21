@@ -73,7 +73,7 @@
         android:id="@+id/person_send_friend_request"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/declineGroup"
+        android:layout_below="@+id/groupChallenge"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:background="#8BC34A"
@@ -99,18 +99,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
         android:background="#4BBFEC"
-        android:text="Start Group Challenge"
+        android:text="Go to Group Challenge"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/declineGroup"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/groupChallenge"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="#EC7676"
-        android:text="Decline Group Challenge"
-        android:textSize="16sp" />
+
 
 </RelativeLayout>

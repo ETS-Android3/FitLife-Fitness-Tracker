@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class socialMainPage extends AppCompatActivity {
 
-    Button profile, home, leader, friends;
+    Button profile, home, leader, friends, points, feedback;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -79,6 +79,23 @@ public class socialMainPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
+        points = findViewById(R.id.pointList);
+        points.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), tableList.class));
+            }
+        });
+
+        feedback = findViewById(R.id.feedBack);
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FeedBackActivity.class));
                 finish();
             }
         });

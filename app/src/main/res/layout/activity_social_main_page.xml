@@ -59,6 +59,17 @@
         android:textColor="#8BC34A"
         android:textStyle="bold"
         android:text="leader board"/>
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Point List"
+        android:id="@+id/pointList"
+        />
     <Button
         android:layout_width="128dp"
         android:layout_height="wrap_content"
@@ -68,6 +79,16 @@
         android:textStyle="bold"
         android:text="Find Friends"
         android:id="@+id/btnFriend"
+        />
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="User FeedBack"
+        android:id="@+id/feedBack"
         />
     <Button
         android:layout_width="128dp"

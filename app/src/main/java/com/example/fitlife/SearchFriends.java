@@ -68,6 +68,8 @@ public class SearchFriends extends AppCompatActivity {
                     String FirstName = dataSnapshot.child("FirstName").getValue().toString();
                     String LastName = dataSnapshot.child("LastName").getValue().toString();
                     String Username = dataSnapshot.child("Username").getValue().toString();
+                    String Email = dataSnapshot.child("Email").getValue().toString();
+                    String Password = dataSnapshot.child("Password").getValue().toString();
                     String Key = dataSnapshot.getKey();
                     mUploads.add(new Item(FirstName, LastName, Username, Key));
                 }
@@ -82,7 +84,7 @@ public class SearchFriends extends AppCompatActivity {
 
     }
 
-    //Onclick method when it is clicked the user will be transported to the PersonProfileActiviy class
+    //Onclick method when it is clicked the user will be transported to the PersonProfileActivity class
     private void setOnClickListener() {
         listen = new MyAdapter.RecyclerViewClickListener() {
             @Override

@@ -34,6 +34,7 @@ public class MealWaterTracking extends AppCompatActivity {
     DatabaseReference reference;
     TextView cals, wat, name;
     Button home;
+    Button mealideas;
 
 
     @Override
@@ -46,10 +47,10 @@ public class MealWaterTracking extends AppCompatActivity {
         String uid = user.getUid();
 
         home = findViewById(R.id.homeBtn);
+        mealideas = findViewById(R.id.ideasButton);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);
         name = findViewById(R.id.fullName);
-        home = findViewById(R.id.homeBtn);
 
         // Gets user data from firebase after user inputs profile creation data.
         // User will have tailored challenges, water, and meal plans based on information entered.
@@ -91,6 +92,14 @@ public class MealWaterTracking extends AppCompatActivity {
 
             }
         });
+        //Create button to go to meal ideas
+        mealideas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MealPlanIdeas.class));
+                finish();
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +108,7 @@ public class MealWaterTracking extends AppCompatActivity {
                 finish();
             }
         });
+
 
 
     }

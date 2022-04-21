@@ -158,8 +158,7 @@ public class leaderBoard extends AppCompatActivity {
                 running = runningDropdown.getSelectedItem().toString().trim();
                 weightDrop = weightsDropdown.getSelectedItem().toString().trim();
 
-
-
+                // Sends data of the respected challenge completed to FireBase
                 HashMap newPoints = new HashMap();
                 newPoints.put("Run", running);
                 newPoints.put("Weights", weightDrop);
@@ -173,7 +172,7 @@ public class leaderBoard extends AppCompatActivity {
         });
 
     }
-
+                // Sends point data from spinners to FireBase to be stored and updated
     public void updatePoints(String uid){
         update = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("LeaderData");
         update.addValueEventListener(new ValueEventListener() {

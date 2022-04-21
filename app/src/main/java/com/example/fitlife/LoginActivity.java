@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         mSignUp = findViewById(R.id.btnSignUp);
 
         mForgot = findViewById(R.id.btnForgotPassword);
-
+        // User password reset
         mForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onSuccess(Void unused) {
                                 Toast.makeText(LoginActivity.this, "Reset Link Sent to Email", Toast.LENGTH_SHORT).show();
                             }
+                            // If email not in firebase, email reset link will be failed to send
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {

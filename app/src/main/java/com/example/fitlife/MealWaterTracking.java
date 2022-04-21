@@ -34,6 +34,7 @@ public class MealWaterTracking extends AppCompatActivity {
     DatabaseReference reference;
     TextView cals, wat, name;
     Button home;
+    Button mealideas;
 
 
     @Override
@@ -46,11 +47,13 @@ public class MealWaterTracking extends AppCompatActivity {
         String uid = user.getUid();
 
         home = findViewById(R.id.homeBtn);
+        mealideas = findViewById(R.id.ideasButton);
         cals = findViewById(R.id.calories);
         wat = findViewById(R.id.water);
         name = findViewById(R.id.fullName);
-        home = findViewById(R.id.homeBtn);
 
+        // Gets user data from firebase after user inputs profile creation data.
+        // User will have tailored challenges, water, and meal plans based on information entered.
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,6 +92,14 @@ public class MealWaterTracking extends AppCompatActivity {
 
             }
         });
+        //Create button to go to meal ideas
+        mealideas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MealPlanIdeas.class));
+                finish();
+            }
+        });
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,16 +110,18 @@ public class MealWaterTracking extends AppCompatActivity {
         });
 
 
+
     }
 
 
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
-
+        // Logic for male users BMR
         if(gender.equals("Male"))
         {
             BMR = 66 + (6.3 * weight) + (12.9 * height) - (6.8 * age);
         }
+        // Logic for female user BMR
         else if (gender.equals("Female"))
         {
             BMR = 655 + (4.3 * weight) + (4.7 * height) - (4.7 * age);
@@ -119,7 +132,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
-
+        // If little to no physical activity BMR will follow this logic
         totalCalories = BMR;
         if(activityLevel.equals("No Activity"))
         {
@@ -138,7 +151,7 @@ public class MealWaterTracking extends AppCompatActivity {
             totalCalories = (BMR * 1.725);
         }
 
-
+        // Caloric intake will vary based on users needs
         if (preference.equals("Cutting"))
         {
             totalCalories = totalCalories - 250;
@@ -155,7 +168,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
         cals.setText(String.valueOf(totalCalories));
     }
-    //test3
+        // Water intake logic
     public void setWaterIntakeLevel(int weight, TextView wat)
     {
 

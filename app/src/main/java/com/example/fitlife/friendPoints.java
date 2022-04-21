@@ -25,7 +25,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class friendPoints extends AppCompatActivity {
     Button home;
-    TextView first, last, email, user, points;
+    TextView first, last, email, user, points; // converts firebase data into android TextView
     CircleImageView profileImage;
     FirebaseAuth fAuth;
     DatabaseReference reference, userRef, friendsRef;
@@ -37,11 +37,12 @@ public class friendPoints extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friend_points);
-        recieverUserId = getIntent().getExtras().get("user_id").toString();
+        recieverUserId = getIntent().getExtras().get("user_id").toString(); // recives the user_Id from firebase
         userRef = FirebaseDatabase.getInstance().getReference().child("Users");
         IntializeFields();
 
         storageReference = FirebaseStorage.getInstance().getReference().child("users/"+recieverUserId+"/profile.jpg");
+        // displays the user profile image on the leaderboard so users can click on and direct them to the page.
 
         //Retrieving the Clicked person Information From Firebase
         userRef.child(recieverUserId).addValueEventListener(new ValueEventListener() {
@@ -52,7 +53,7 @@ public class friendPoints extends AppCompatActivity {
                 last.setText(snapshot.child("LastName").getValue(String.class));
                 email.setText(snapshot.child("Email").getValue(String.class));
                 String x = snapshot.child("Points").getValue().toString();
-                points.setText(x);
+                points.setText(x); // we set points x to a string first then passed it through Android TextView so it can be displayed
                 storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -74,7 +75,7 @@ public class friendPoints extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
-        });
+        }); // Home button
 
 
 

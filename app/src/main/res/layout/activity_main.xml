@@ -50,6 +50,16 @@
         android:id="@+id/profile"
         />
     <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
+        android:text="Points list"
+        android:id="@+id/table"
+        />
+    <Button
         android:id="@+id/btnTrack"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
@@ -94,9 +104,21 @@
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
+        android:text="Daily Challenge"
+        android:id="@+id/daily"
+        />
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign_in_button"
+        android:textColor="#8BC34A"
+        android:textStyle="bold"
         android:text="Find Friends"
         android:id="@+id/btnFriend"
         />
+
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="128dp"

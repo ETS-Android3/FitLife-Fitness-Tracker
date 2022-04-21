@@ -45,7 +45,7 @@ public class DailyChallenge extends AppCompatActivity {
         user = fAuth.getCurrentUser();
         String uid = user.getUid();
 
-
+        // Gets the users daily challenge from firebase challenge list.
         getDailyChallenge();
         getData = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         getData.addValueEventListener(new ValueEventListener() {
@@ -65,13 +65,14 @@ public class DailyChallenge extends AppCompatActivity {
         completed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Adds the challenge completed total points to the user
                 reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
                 totalPoints += 1;
                 HashMap newPoints = new HashMap();
                 newPoints.put("Points", totalPoints);
                 reference.updateChildren(newPoints).addOnCompleteListener(new OnCompleteListener() {
                     @Override
+                    // Chceks it the task executed correctly
                     public void onComplete(@NonNull Task task) {
                         if(task.isSuccessful()){
                             Toast.makeText(DailyChallenge.this, "User Points Updated", Toast.LENGTH_SHORT).show();
@@ -97,7 +98,7 @@ public class DailyChallenge extends AppCompatActivity {
     }
 
     public class setDailyChallenge extends TimerTask {
-
+        // Daily challenge dictionary
         @Override
         public void run() {
             String dailyChal;

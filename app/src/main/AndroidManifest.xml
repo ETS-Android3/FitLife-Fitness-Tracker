@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
         <activity
+            android:name=".tableList"
+            android:exported="false"/>
+        <activity
+            android:name=".friendPoints"
+            android:exported="false" />
+        <activity
             android:name=".leaderBoard"
             android:exported="false" />
         <activity

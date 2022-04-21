@@ -1,14 +1,14 @@
 package com.example.fitlife;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -102,6 +102,7 @@ public class DailyChallenge extends AppCompatActivity {
         @Override
         public void run() {
             String dailyChal;
+            //array of daily challenges
             String[] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
                     "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",
                     "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
@@ -115,7 +116,7 @@ public class DailyChallenge extends AppCompatActivity {
         }
 
     }
-
+//Get the time of 12 AM
     private Date getTomorrowMorning12AM(){
 
         Date date12am = new java.util.Date();
@@ -124,6 +125,7 @@ public class DailyChallenge extends AppCompatActivity {
 
         return date12am;
     }
+    //Try setting daily challenge to occur daily
     public void getDailyChallenge()
     {
         Calendar today = Calendar.getInstance();

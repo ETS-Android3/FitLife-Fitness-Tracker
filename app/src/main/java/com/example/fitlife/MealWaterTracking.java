@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class MealWaterTracking extends AppCompatActivity {
+    //Create variables to store user info
     double BMR;
     double totalCalories;
     double totalWater;
@@ -41,11 +42,11 @@ public class MealWaterTracking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal_water_tracking);
-
+//Connect to firebase and get user information
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         String uid = user.getUid();
-
+//Set textview id's
         home = findViewById(R.id.homeBtn);
         mealideas = findViewById(R.id.ideasButton);
         cals = findViewById(R.id.calories);
@@ -58,6 +59,7 @@ public class MealWaterTracking extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //Parse user info from firebase
                 firstName = dataSnapshot.child("FirstName").getValue(String.class);
                 lastName = dataSnapshot.child("LastName").getValue(String.class);
                 name.setText(firstName + " " + lastName);
@@ -100,7 +102,7 @@ public class MealWaterTracking extends AppCompatActivity {
                 finish();
             }
         });
-
+//Create button to go to home
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,7 +115,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
-
+//Function for BMR
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
         // Logic for male users BMR

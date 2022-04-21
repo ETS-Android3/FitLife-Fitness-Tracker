@@ -1,14 +1,14 @@
 package com.example.fitlife;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 //This class allows the user to view other profiles of other users. User is able to send friend request, cancel friend request.
-//The reciever of the friend request can then use them to either deny the request or accept it. When accepted both sender and reciever are allowed to unfriend each other
+//The receiver of the friend request can then use them to either deny the request or accept it. When accepted both sender and reciever are allowed to unfriend each other
 public class PersonProfileActivity extends AppCompatActivity {
 
     TextView first, last, email, user;

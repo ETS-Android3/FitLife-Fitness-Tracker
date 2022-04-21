@@ -11,6 +11,7 @@ public class MyTestService extends IntentService {
     }
 
     @Override
+    //Tried using this along with MyAlarmReceiver to set up daily challenge to recur daily
     protected void onHandleIntent(Intent intent) {
         String dailyChal;
         String[] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",

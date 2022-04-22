@@ -28,7 +28,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class DailyChallenge extends AppCompatActivity {
-
+//Create variables for textview, firebase, and points
     TextView dailyChallenge;
     Button completed, notYet;
     DatabaseReference reference, getData;

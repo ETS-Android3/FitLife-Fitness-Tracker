@@ -91,6 +91,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for end of day shake
         shake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

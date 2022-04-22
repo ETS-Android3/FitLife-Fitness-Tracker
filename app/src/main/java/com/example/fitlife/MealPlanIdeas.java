@@ -83,6 +83,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for protein pizza recipe
         pizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

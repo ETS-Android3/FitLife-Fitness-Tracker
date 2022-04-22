@@ -99,7 +99,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
-        //Create buttons to go back to home and meal tracker
+        //Create button to go back to meal tracker
         meal = findViewById(R.id.mealBtn);
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +108,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
     });
+        //Create button to go back to home
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

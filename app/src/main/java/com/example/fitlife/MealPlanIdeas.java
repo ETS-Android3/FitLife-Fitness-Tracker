@@ -35,6 +35,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for bagel recipe
         bagel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +43,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for smoothie recipes
         smoothie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

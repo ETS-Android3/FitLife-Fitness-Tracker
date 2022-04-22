@@ -66,6 +66,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for speciality pasta
         pasta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

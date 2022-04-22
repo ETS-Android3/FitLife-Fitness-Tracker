@@ -58,6 +58,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for salmon recipe
         salmon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

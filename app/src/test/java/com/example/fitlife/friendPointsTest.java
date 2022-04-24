@@ -10,7 +10,8 @@ public class friendPointsTest {
     @Test
     public void checkPoints(){
         TstFriendPoints test = new TstFriendPoints("Eric", "Smith", "eric", "10102", "Eric@gmail.com",24);
-        assertEquals(24, test.getPoints());
+        test.setPoints(45);
+        assertEquals(45, test.getPoints());
     }
 
     @Test
@@ -34,7 +35,8 @@ public class friendPointsTest {
     @Test
     public void checkKey(){
         TstFriendPoints test = new TstFriendPoints("Eric", "Smith", "eric", "10102", "Eric@gmail.com",24);
-        assertEquals("10102", test.getKey());
+        test.setKey("1010");
+        assertEquals("1010", test.getKey());
     }
 
     @Test

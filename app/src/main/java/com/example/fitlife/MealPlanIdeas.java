@@ -35,6 +35,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for bagel recipe
         bagel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +43,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for smoothie recipes
         smoothie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +60,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for salmon recipe
         salmon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +69,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for speciality pasta
         pasta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +87,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for protein pizza recipe
         pizza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +96,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
+        //Create hyperlink for end of day shake
         shake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +105,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
         });
-        //Create buttons to go back to home and meal tracker
+        //Create button to go back to meal tracker
         meal = findViewById(R.id.mealBtn);
         meal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +114,7 @@ public class MealPlanIdeas extends AppCompatActivity {
                 finish();
             }
     });
+        //Create button to go back to home
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

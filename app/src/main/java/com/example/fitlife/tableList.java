@@ -21,8 +21,8 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-//This class takes Creates a recyclerview where users can see all the users within the application. From there the user can click on the item list and then be taken to the Person
-//profile activity
+//This class takes Creates a recyclerview where users can see all the users within the application. From there the user can click on the item list and then be taken to the friendPoints
+//activity.
 public class tableList extends AppCompatActivity {
     ValueEventListener listener;
     DatabaseReference reference;

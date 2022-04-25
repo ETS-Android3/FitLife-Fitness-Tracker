@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//New Landing page for users. This page is for navigation to other activities. Mostly here to make our application look cleaner.
 public class fitnessMain extends AppCompatActivity {
 
     Button phys, timely, home, meal, daily;
@@ -93,6 +94,7 @@ public class fitnessMain extends AppCompatActivity {
         });
     }
 
+    //Logout Function to logout user from the application
     public void logout(View view){
         FirebaseAuth.getInstance().signOut();//Log out of User
         startActivity(new Intent(getApplicationContext(),LoginActivity.class));

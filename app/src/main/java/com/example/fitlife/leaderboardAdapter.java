@@ -21,6 +21,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 //Functions necessary for implementing a recyclerview
+//Used for feeding the firebase data into the recyclerview.
 public class leaderboardAdapter extends RecyclerView.Adapter<leaderboardAdapter.MyViewHolder> {
     List<item2> items;
     RecyclerViewClickListener listener;
@@ -55,6 +56,7 @@ public class leaderboardAdapter extends RecyclerView.Adapter<leaderboardAdapter.
         return new MyViewHolder(itemView);
     }
 
+    //Adding the data of the user into the respected positions of the recyclerview.
     @Override
     public void onBindViewHolder(@NonNull leaderboardAdapter.MyViewHolder holder, int position) {
         String Fname = items.get(position).getFirstName();

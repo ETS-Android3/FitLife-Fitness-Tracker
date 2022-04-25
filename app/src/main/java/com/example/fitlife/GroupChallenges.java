@@ -243,6 +243,7 @@ public class GroupChallenges extends AppCompatActivity {
         });
     }
 
+    //Array for the Users that will show the different group challenges challenges
     private String getChallenge() {
         String dailyChal;
         challenges = new String[]{"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
@@ -250,6 +251,8 @@ public class GroupChallenges extends AppCompatActivity {
                 "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
                 "Walk an extra 1000 steps today", "Drink more water today", "Do 10 minutes of yoga today",
                 "Do 10 leg raises today", "Do high knees for 2 minutes today", "Do 20 lunges today"};
+
+        //counter used to store array value.
         setArray.child(myId).child(friendId).child("counter").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -281,11 +284,13 @@ public class GroupChallenges extends AppCompatActivity {
         return dailyChal;
     }
 
+    //Method used to start main activity, making sure user can go back to home page.
     private void waitForFriend() {
         startActivity(new Intent(getApplicationContext(), SearchFriends.class));
         finish();
     }
 
+    //This function adds the user points and updates that value into the database. Changes the status for the two friends within database to know which function must be executed.
     private void CompletedTask() {
         status.child(myId).child(friendId).child("MyStatus").setValue("Complete").addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -330,6 +335,7 @@ public class GroupChallenges extends AppCompatActivity {
         });
     }
 
+    //This function makes sure that when a user leaves the activity that they are still able to see the correct text views. Make sure the buttons are the same
     private void maintainButtons() {
         status.child(myId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -337,6 +343,7 @@ public class GroupChallenges extends AppCompatActivity {
                 if(snapshot.hasChild(friendId)){
                     String request_type = snapshot.child(friendId).child("MyStatus").getValue().toString();
 
+                    //Chooses what buttons will be shown to the user
                     if(request_type.equals("Complete")){
                         currentState = "Waiting";
                         complete.setText("Waiting");

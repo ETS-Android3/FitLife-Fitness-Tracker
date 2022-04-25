@@ -78,7 +78,8 @@ public class sigginActivity extends AppCompatActivity {
                 String password = editTextPassword.getText().toString().trim();
                 String userName = editTextUser.getText().toString().trim();
                 Query userNameQuery = FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("Username").equalTo(userName);
-                //Checking if Data is not empty and meets the standards for firebase
+
+                //Checking if Data is not empty and meets the standards for firebase basically not null and that it reaches the password length for firebase
                 if (TextUtils.isEmpty(email)) {
                     editTextEmail.setError("Email Is Required.");
                     return;
@@ -124,6 +125,7 @@ public class sigginActivity extends AppCompatActivity {
                                         DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
                                         DatabaseReference leader_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id).child("LeaderData");
 
+                                        //Saving the data to firebase
                                         Map newPost = new HashMap();
                                         newPost.put("FirstName", first);
                                         newPost.put("LastName", last);
@@ -133,6 +135,7 @@ public class sigginActivity extends AppCompatActivity {
                                         newPost.put("Points", 0);
                                         current_user_db.setValue(newPost);
 
+                                        //Adds data to be used in leaderBoard activity, without this get a null pointer exception.
                                         Map leader = new HashMap();
                                         leader.put("Calorie", "Null");
                                         leader.put("Run", "Null");

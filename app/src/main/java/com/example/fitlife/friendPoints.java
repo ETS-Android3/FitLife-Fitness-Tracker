@@ -33,6 +33,7 @@ public class friendPoints extends AppCompatActivity {
     StorageReference storageReference;
     String sendUserId, recieverUserId, currentState, saveCurrentDate;
 
+    //Page to display differnt users and their points. Works similar to the user profile page.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +80,8 @@ public class friendPoints extends AppCompatActivity {
 
 
     }
+
+    //Initialize fields for the global variables. Just to make code cleaner.
     private void IntializeFields() {
         first= findViewById(R.id.firstName2);
         last = findViewById(R.id.LastName2);

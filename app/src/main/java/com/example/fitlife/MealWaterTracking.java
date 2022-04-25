@@ -115,7 +115,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
-//Function for BMR
+//Function for BMR for both males and females
     public void getBMR(double height, String gender, int weight, int age , String activityLevel, String preference, TextView cals)
     {
         // Logic for male users BMR
@@ -132,6 +132,7 @@ public class MealWaterTracking extends AppCompatActivity {
 
     }
 
+    //from get bmr we get the total calories from the user
     public void setTotalCalories(String activityLevel, String preference, double BMR, TextView cals)
     {
         // If little to no physical activity BMR will follow this logic

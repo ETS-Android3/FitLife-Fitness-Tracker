@@ -1,5 +1,6 @@
 package com.example.fitlife;
 
+//
 public class testLoginActivityTest {
     private  String email;
     private String password;

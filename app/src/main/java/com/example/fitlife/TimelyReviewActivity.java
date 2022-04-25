@@ -15,6 +15,7 @@ import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+//Opens up the calendar where users can select the dates that they want to see their activities taken place.
 public class TimelyReviewActivity extends AppCompatActivity {
 
 

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//Class used to hyperlink to other websites that give users the recipes for simple dishes.
 public class MealPlanIdeas extends AppCompatActivity {
     TextView oats, bagel, smoothie, chicken, salmon, pasta, steak, pizza, shake;
     Button meal, home;

@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 
+//Shows the activities that the user did within the timeframe specified.
 public class TimelyActActivity extends AppCompatActivity {
 
 

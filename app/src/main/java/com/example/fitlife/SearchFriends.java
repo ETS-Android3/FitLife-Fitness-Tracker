@@ -32,6 +32,7 @@ public class SearchFriends extends AppCompatActivity {
     Button button;
     MyAdapter.RecyclerViewClickListener listen;
 
+    //Opens a recyclerview that allows users to see all the different users that we have.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

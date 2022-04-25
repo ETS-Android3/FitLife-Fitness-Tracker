@@ -87,15 +87,21 @@
             android:id="@+id/changePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:background="#000000"
             android:text="Change Profile Picture"
-            android:textColor="#8BC34A" />
+            android:textColor="#9C27B0"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/resetBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:background="#000000"
             android:text="Reset Password"
-            android:textColor="#8BC34A" />
+            android:textColor="#E91E63"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/logoutBtn"
@@ -104,6 +110,12 @@
             android:onClick="logout"
             android:text="Logout"
             android:textColor="#900D09" />
+
+            android:background="#000000"
+            android:onClick="logout"
+            android:text="Logout"
+            android:textColor="#900D09"
+            android:textSize="20sp" />
 
         <ImageView
             android:layout_width="200px"

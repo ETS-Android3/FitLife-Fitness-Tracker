@@ -27,6 +27,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//Class is Responsible for the Daily Challenge activity users are able to get a challenge and get points off of that.
 public class DailyChallenge extends AppCompatActivity {
 //Create variables for textview, firebase, and points
     TextView dailyChallenge;
@@ -97,6 +98,7 @@ public class DailyChallenge extends AppCompatActivity {
 
     }
 
+    //Setting the random array that the users will see.
     public class setDailyChallenge extends TimerTask {
         // Daily challenge dictionary
         @Override
@@ -116,7 +118,8 @@ public class DailyChallenge extends AppCompatActivity {
         }
 
     }
-//Get the time of 12 AM
+
+    //Get the time of 12 AM
     private Date getTomorrowMorning12AM(){
 
         Date date12am = new java.util.Date();
@@ -125,7 +128,8 @@ public class DailyChallenge extends AppCompatActivity {
 
         return date12am;
     }
-    //Try setting daily challenge to occur daily
+
+    //Try setting daily challenge to occur daily: Ie only display once a day.
     public void getDailyChallenge()
     {
         Calendar today = Calendar.getInstance();

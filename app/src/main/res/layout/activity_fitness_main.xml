@@ -45,8 +45,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Meal Tracker"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
+
         android:textStyle="bold" />
 
     <Button
@@ -56,8 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Physical Tracker"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
         android:textStyle="bold" />
 
     <Button
@@ -66,8 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Timley Review"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
         android:textStyle="bold" />
 
     <Button
@@ -77,8 +84,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Daily Challenge"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
         android:textStyle="bold" />
 
     <Button
@@ -87,8 +96,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Home"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
         android:textStyle="bold" />
 
     <Button
@@ -97,9 +108,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:onClick="logout"
         android:text="Log Out"
-        android:textColor="#6CAF1E"
+        android:textColor="#8BC34A"
         android:textStyle="bold" />
 
 </LinearLayout>

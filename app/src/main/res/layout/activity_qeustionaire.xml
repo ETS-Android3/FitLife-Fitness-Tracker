@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DAECC2"
+
+    android:background="#DAECC2 "
     android:gravity="center"
     android:orientation="vertical"
     android:padding="26dp"
@@ -108,7 +109,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/sign_in_button"
         android:text="Register"
-        android:textColor="#8BC34A"
+
+        android:textColor="#699A18"
         android:textStyle="bold" />
 
 

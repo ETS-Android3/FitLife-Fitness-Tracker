@@ -1,5 +1,6 @@
 package com.example.fitlife;
 
+//Test to check the logic for the leaderBoard activity.
 public class testLeaderboard {
     private int runPoints;
     private int weightPoints;

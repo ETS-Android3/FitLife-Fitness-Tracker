@@ -66,8 +66,10 @@
         android:background="@drawable/sign_in_button"
         android:text="Water"
         android:textAlignment="center"
-        android:textColor="#89CFF0"
-        android:textSize="30dp" />
+
+        android:textSize="30dp"
+        android:background="@drawable/sign_in_button"
+        android:id="@+id/water"/>
 
     <Button
         android:id="@+id/ideasButton"
@@ -75,6 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Meal Ideas"
         android:textColor="#8BC34A"
         android:textStyle="bold" />
@@ -85,9 +89,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
+        android:backgroundTint="#DAECC2"
         android:text="Home"
         android:textColor="#8BC34A"
         android:textStyle="bold" />
+
 
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.fitlife;
 
+//Testing logic for MealWater Tracking
 public class MealWaterTest {
     double BMR;
     double totalCalories;

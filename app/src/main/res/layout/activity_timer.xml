@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAECC2"
     android:orientation="vertical"
     tools:context=".TimerActivity">
 
@@ -11,167 +12,167 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <TextView
-            android:textSize="40sp"
-            android:text="Timer"
-            android:textColor="#8BC34A"
-            android:textStyle="bold"
-            android:textAlignment="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:text="Timer"
+            android:textAlignment="center"
+            android:textColor="#8BC34A"
+            android:textSize="40sp"
+            android:textStyle="bold">
 
         </TextView>
 
         <ImageView
-            android:src="@drawable/ic_baseline_directions_run_24"
-            android:layout_margin="16dp"
             android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
+            android:layout_margin="16dp"
             android:layout_marginTop="40dp"
-            android:layout_height="100dp">
+            android:src="@drawable/ic_baseline_directions_run_24">
 
         </ImageView>
+
         <TextView
-            android:textSize="20sp"
-            android:textAllCaps="false"
             android:id="@+id/ex_name"
-            android:textColor="@color/black"
-            android:layout_margin="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp">
 
         </TextView>
 
         <TextView
-            android:textSize="16sp"
-            android:textAllCaps="false"
             android:id="@+id/ex_details"
-            android:textColor="@color/black"
-            android:layout_margin="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp">
 
         </TextView>
 
         <RelativeLayout
-            android:layout_margin="8dp"
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:padding="8dp"
-                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_weight="1"
-                        android:textSize="20sp"
-                        android:text="@string/date"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/date"
+                        android:textSize="20sp">
 
                     </TextView>
 
                     <TextView
-                        android:layout_weight="1"
-                        android:textSize="20sp"
-                        android:text="12-2-2022"
                         android:id="@+id/date"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="12-2-2022"
+                        android:textSize="20sp">
 
                     </TextView>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:padding="8dp"
-                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp">
 
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textSize="20sp"
                         android:text="@string/timer"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:textSize="20sp">
 
                     </TextView>
 
                     <TextView
-                        android:layout_weight="1"
-                        android:textSize="20sp"
                         android:id="@+id/timer"
-                        android:text="00:00:00:00"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="00:00:00:00"
+                        android:textSize="20sp">
 
                     </TextView>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/cancel_btn"
-                        android:text="Cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:textAllCaps="false"
                         android:layout_weight="1"
-                        android:visibility="visible"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:visibility="visible">
 
                     </Button>
 
                     <Button
                         android:id="@+id/start_stop_btn"
-                        android:text="start"
-                        android:background="#8BC34A"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                        android:textAllCaps="false"
-                        android:layout_weight="1"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_weight="1"
+                        android:background="#8BC34A"
+                        android:text="start"
+                        android:textAllCaps="false">
 
                     </Button>
 
                     <Button
                         android:id="@+id/save_btn"
-                        android:text="Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:textAllCaps="false"
                         android:layout_weight="1"
-                        android:visibility="visible"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:visibility="visible">
 
                     </Button>
                 </LinearLayout>
 
 
-
             </LinearLayout>
-
 
 
         </RelativeLayout>

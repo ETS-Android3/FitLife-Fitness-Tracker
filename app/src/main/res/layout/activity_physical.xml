@@ -4,143 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAECC2"
     android:orientation="vertical"
-    android:background="@drawable/login_bg"
     tools:context=".PhysicalActivity">
 
 
     <ImageView
-        android:src="@drawable/ic_baseline_directions_run_24"
-        android:layout_margin="16dp"
         android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_height="100dp">
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_directions_run_24">
 
     </ImageView>
+
     <TextView
-        android:textSize="20sp"
-        android:textAllCaps="false"
         android:id="@+id/ex_name"
-        android:textColor="@color/black"
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp">
 
     </TextView>
 
     <TextView
-        android:textSize="16sp"
-        android:textAllCaps="false"
         android:id="@+id/ex_details"
-        android:textColor="@color/black"
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp">
 
     </TextView>
 
     <RelativeLayout
-        android:layout_margin="8dp"
-
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:padding="8dp"
-                android:layout_margin="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp">
 
                 <TextView
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:text="@string/date"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/date"
+                    android:textSize="20sp">
 
                 </TextView>
 
                 <TextView
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:text="12-2-2022"
                     android:id="@+id/date"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12-2-2022"
+                    android:textSize="20sp">
 
                 </TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:padding="8dp"
-                android:layout_margin="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp">
 
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="20sp"
                     android:text="@string/timer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:textSize="20sp">
 
                 </TextView>
 
                 <TextView
-                    android:layout_weight="1"
-                    android:textSize="20sp"
                     android:id="@+id/timer"
-                    android:text="00:00:00:00"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="00:00:00:00"
+                    android:textSize="20sp">
 
                 </TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_margin="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/cancel_btn"
-                    android:text="Cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:textAllCaps="false"
                     android:layout_weight="1"
-                    android:visibility="visible"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:visibility="visible">
 
                 </Button>
 
                 <Button
                     android:id="@+id/start_stop_btn"
-                    android:text="start"
-                    android:background="#8BC34A"
-                    android:textAllCaps="false"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_weight="1"
+                    android:background="#8BC34A"
+                    android:text="start"
+                    android:textAllCaps="false">
 
                 </Button>
 
             </LinearLayout>
 
 
-
         </LinearLayout>
-
 
 
     </RelativeLayout>
@@ -148,13 +148,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:layout_gravity="center"
-        android:textSize="25dp"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
         android:layout_marginStart="10dp"
-        android:text="Workout"/>
+        android:gravity="center_vertical"
+        android:text="Workout"
+        android:textColor="#8BC34A"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 
     <ScrollView
@@ -168,13 +168,13 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
-                app:cardCornerRadius="8dp"
 
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -185,31 +185,32 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"/>
+                        android:src="@mipmap/ic_launcher" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_gravity="center"
-                        android:textSize="15dp"
                         android:id="@+id/strictpress"
-
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="strict press"/>
+                        android:gravity="center_vertical"
+
+                        android:text="strict press"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
-                app:cardCornerRadius="8dp"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -219,31 +220,32 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"/>
+                        android:src="@mipmap/ic_launcher" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_gravity="center"
-                        android:textSize="15dp"
                         android:id="@+id/Squat"
-
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="Squat"/>
+                        android:gravity="center_vertical"
+
+                        android:text="Squat"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
-                app:cardCornerRadius="8dp"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -253,31 +255,32 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"/>
+                        android:src="@mipmap/ic_launcher" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_gravity="center"
-                        android:textSize="15dp"
                         android:id="@+id/biceps"
-
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="Biceps"/>
+                        android:gravity="center_vertical"
+
+                        android:text="Biceps"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
-                app:cardCornerRadius="8dp"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -287,31 +290,32 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"/>
+                        android:src="@mipmap/ic_launcher" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:layout_gravity="center"
-                        android:textSize="15dp"
                         android:id="@+id/deadlift"
-
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="Deadlift"/>
+                        android:gravity="center_vertical"
+
+                        android:text="Deadlift"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="4dp"
-                app:cardCornerRadius="8dp"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -321,19 +325,19 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_launcher"/>
+                        android:src="@mipmap/ic_launcher" />
 
 
                     <TextView
+                        android:id="@+id/benchpress"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_vertical"
                         android:layout_gravity="center"
-                        android:textSize="15dp"
-                        android:id="@+id/benchpress"
-
                         android:layout_marginStart="10dp"
-                        android:text="Bench Press"/>
+                        android:gravity="center_vertical"
+
+                        android:text="Bench Press"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -342,11 +346,6 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
-
 
 
 </LinearLayout>

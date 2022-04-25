@@ -71,7 +71,7 @@
             android:textStyle="normal"
             android:id="@+id/friendpoints"
             android:textAlignment="center"/>
-            />
+        />
 
     </LinearLayout>
 

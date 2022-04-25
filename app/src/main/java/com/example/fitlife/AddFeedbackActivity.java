@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class AddFeedbackActivity extends AppCompatActivity {
 
-
+//variables used that may be used
     EditText name,message;
     Button applyBtn;
     FirebaseFirestore firebaseFirestore;

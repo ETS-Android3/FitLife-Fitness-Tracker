@@ -50,19 +50,19 @@
         android:id="@+id/btnSignIn"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:background="DAECC2 "
         android:backgroundTint="#DAECC2"
         android:text="Sign in"
         android:textColor="#8BC34A"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
 
         <TextView
+            android:id="@+id/dontHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -72,19 +72,25 @@
 
         <Button
             android:id="@+id/btnSignUp"
-            android:layout_width="68dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/dontHaveAccount"
+            android:layout_alignParentStart="true"
 
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="13dp"
             android:text="Sign Up!"
             android:textAllCaps="false"
             android:textSize="20sp" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/btnForgotPassword"
         android:layout_width="157dp"
         android:layout_height="wrap_content"
         android:elevation="0dp"
+        android:textAlignment="center"
         android:text="Forgot Password?"
         android:textAllCaps="false"
         android:textColor="#8BC34A"

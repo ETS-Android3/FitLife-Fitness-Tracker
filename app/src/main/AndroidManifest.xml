@@ -65,8 +65,6 @@
         <activity
             android:name=".qeustionaireActivity"
             android:exported="false" />
-        //hello
-        //pop
         <activity
             android:name=".sigginActivity"
             android:exported="false" />

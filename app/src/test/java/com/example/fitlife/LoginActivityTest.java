@@ -13,6 +13,11 @@ public class LoginActivityTest {
     }
 
     @Test
+    public void fail(){
+        assertEquals(3,1);
+    }
+
+    @Test
     public void emailNotNull(){
         testLoginActivityTest test = new testLoginActivityTest("fitlifecsc@gmail.com", "123456");
         assertEquals(true, test.emailNotNull());

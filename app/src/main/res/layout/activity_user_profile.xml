@@ -76,29 +76,38 @@
             android:id="@+id/homeBtn2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#8BC34A"
-            android:text="Home"/>
+            android:background="#000000"
+            android:text="Home"
+            android:textColor="#03A9F4"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/changePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#8BC34A"
-            android:text="Change Profile Picture" />
+            android:background="#000000"
+            android:text="Change Profile Picture"
+            android:textColor="#9C27B0"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/resetBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#8BC34A"
+            android:background="#000000"
             android:text="Reset Password"
-            />
+            android:textColor="#E91E63"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#900D09"
-            android:text="Logout"
+            android:background="#000000"
             android:onClick="logout"
-            />
+            android:text="Logout"
+            android:textColor="#900D09"
+            android:textSize="20sp" />
 
         <ImageView
             android:layout_width="200px"

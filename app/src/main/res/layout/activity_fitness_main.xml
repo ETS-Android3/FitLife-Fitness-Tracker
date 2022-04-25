@@ -47,49 +47,56 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+        android:backgroundTint="#DAECC2"
+        android:text="Meal Tracker"
         android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Meal Tracker"/>
+        android:textStyle="bold" />
+
     <Button
 
+        android:id="@+id/physicals"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:backgroundTint="#DAECC2"
         android:text="Physical Tracker"
-        android:id="@+id/physicals"/>
+        android:textColor="#8BC34A"
+        android:textStyle="bold" />
+
     <Button
+        android:id="@+id/btnTime"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:backgroundTint="#DAECC2"
         android:text="Timley Review"
-        android:id="@+id/btnTime"
-        />
+        android:textColor="#8BC34A"
+        android:textStyle="bold" />
+
     <Button
 
+        android:id="@+id/daily"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:backgroundTint="#DAECC2"
         android:text="Daily Challenge"
-        android:id="@+id/daily"/>
+        android:textColor="#8BC34A"
+        android:textStyle="bold" />
+
     <Button
+        android:id="@+id/btnGoHome2"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
+        android:backgroundTint="#DAECC2"
         android:text="Home"
-        android:id="@+id/btnGoHome2"
-        />
+        android:textColor="#8BC34A"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnLogOut2"
@@ -97,10 +104,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Log Out"
+        android:backgroundTint="#DAECC2"
         android:onClick="logout"
-        />
+        android:text="Log Out"
+        android:textColor="#8BC34A"
+        android:textStyle="bold" />
 
 </LinearLayout>

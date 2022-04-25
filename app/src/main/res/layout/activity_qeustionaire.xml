@@ -4,67 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="#DAECC2 "
     android:gravity="center"
-    android:padding="26dp"
     android:orientation="vertical"
+    android:padding="26dp"
     tools:context=".qeustionaireActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#8BC34A"
         android:text="Fit Life"
+        android:textColor="#8BC34A"
         android:textSize="50sp" />
 
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="25sp"
         android:layout_height="wrap_content"
-        android:text="Fitness Questionnaire"
         android:layout_marginBottom="6dp"
-        />
+        android:gravity="center"
+        android:text="Fitness Questionnaire"
+        android:textSize="25sp" />
+
     <EditText
         android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:imeOptions="actionNext"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
+        android:hint="Age"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/etHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Height in Inches"
-        android:inputType="number"
-        android:imeOptions="actionNext"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
+        android:hint="Enter Height in Inches"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/etWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Your Weight in lbs"
-        android:inputType="number"
-        android:imeOptions="actionNext"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="16dp"
-        android:textSize="20sp"
-        />
+        android:hint="Enter Your Weight in lbs"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:textSize="20sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="What is Your sex?" />
+        android:text="What is Your sex?"
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -73,11 +72,12 @@
         android:background="@android:drawable/btn_dropdown"
         android:contentDescription="@string/app_name"
         android:spinnerMode="dropdown" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="What Is Your Activity Level" />
+        android:text="What Is Your Activity Level"
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/spinner2"
@@ -86,12 +86,12 @@
         android:background="@android:drawable/btn_dropdown"
         android:contentDescription="@string/app_name"
         android:spinnerMode="dropdown" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:text="What Are Your Fitness Goals?"
-        />
+        android:textSize="20sp" />
 
     <Spinner
 
@@ -101,15 +101,15 @@
         android:background="@android:drawable/btn_dropdown"
         android:contentDescription="@string/app_name"
         android:spinnerMode="dropdown" />
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
         android:text="Register"
-        />
+        android:textColor="#699A18"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

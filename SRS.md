@@ -16,7 +16,7 @@ All
 |Project Team|Fr2: Leaderboard|
 |All|<p>Nr1: Security</p><p>Nr4: Performance</p><p>Fr8: Personalization</p><p>Fr14:User Feedback</p>|
 
-` `**Features of stakeholders:**
+` `**Features of Stakeholders:**
 
 1. Calorie counter
 1. Competition aspects
@@ -124,7 +124,6 @@ Performance
 |Version: 1.0||Date: 02/02/2022|Priority: 1|
 
 
-Step 6 populate SRS:
 
 
 |**FR1.  Calorie Counter**|

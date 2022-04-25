@@ -21,9 +21,11 @@
             android:layout_marginTop="5.0dip"
             android:minHeight="50.0dip"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#"
                 android:text="Name"
                 android:textColor="#ff6f6f6f"
                 android:textSize="15sp"
@@ -66,26 +68,17 @@
         </LinearLayout>
 
 
-
-
-
-
-
-
-
-
-
-
         <Button
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/sign_in_button"
-            android:textColor="#8BC34A"
             android:id="@+id/applyBtn"
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sign_in_button"
+            android:backgroundTint="#DAECC2"
             android:text="Apply"
 
+            android:textColor="#8BC34A"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

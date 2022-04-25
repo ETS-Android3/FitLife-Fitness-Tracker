@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import java.util.Random;
 
+//Functionality that is supposed to help us try to implement the daily chllenges to be daily.
 public class MyTestService extends IntentService {
     public MyTestService() {
         super("MyTestService");

@@ -303,6 +303,7 @@ public class PersonProfileActivity extends AppCompatActivity {
         });
     }
 
+    //Sends friends to the group challenge page of the application
     private void GroupChall() {
         Intent intent = new Intent(getApplicationContext(), GroupChallenges.class);
         String friend_id = recieverUserId;

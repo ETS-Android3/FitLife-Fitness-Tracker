@@ -20,7 +20,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-//Functions necessary for implementing a recyclerview
+//Functions necessary for implementing a recyclerview will be used in SearchFriends and tableTest
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Item> items;
     RecyclerViewClickListener listener;

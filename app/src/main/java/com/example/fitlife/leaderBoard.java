@@ -125,6 +125,7 @@ public class leaderBoard extends AppCompatActivity {
 
     }
 
+    //This retrieves the points from the user and updates them within the database.
     private void updatePoints(String uid) {
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         HashMap newPoints = new HashMap();
@@ -143,6 +144,7 @@ public class leaderBoard extends AppCompatActivity {
     }
 
 
+    //Gets the user points from the database
     private void getPoints(String uid) {
         getData = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         getData.addValueEventListener(new ValueEventListener() {
@@ -159,6 +161,7 @@ public class leaderBoard extends AppCompatActivity {
         });
     }
 
+    //Updates data into firebase, updates to what the selections were from the spinner.
     public void updateData(String uid){
         update = FirebaseDatabase.getInstance().getReference().child("Users").child(uid).child("LeaderData");
         update.addValueEventListener(new ValueEventListener() {
@@ -185,11 +188,14 @@ public class leaderBoard extends AppCompatActivity {
 
     }
 
+    //Simple addition for the total calculator.
     private void addTotalPoints() {
 
         totalPoints = waterPoints + caloriePoints + weightPoints + runPoints + totalPoints;
     }
 
+
+    //Selects what they chose for the water points.
     private int addWaterPoints(String upWater) {
         int waterPoints = 0;
         if (upWater.equals("I almost reached my goal")) {
@@ -201,6 +207,7 @@ public class leaderBoard extends AppCompatActivity {
         return waterPoints;
     }
 
+    //Based on spinner input will choose the value for caloriePoints
     private int addCaloriePoints(String upCal) {
         int caloriePoints = 0;
         if (upCal.equals("I almost reached my calorie goal")) {
@@ -212,6 +219,7 @@ public class leaderBoard extends AppCompatActivity {
         return caloriePoints;
     }
 
+    //Based on spinner input will choose the value for weightPoints
     private int addWeightPoints(String upWeight) {
         int weightPoints = 0;
 

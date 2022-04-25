@@ -18,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+//This shows all the feedback for our users
 public class FeedBackActivity extends AppCompatActivity {
 
     RecyclerView rvList;

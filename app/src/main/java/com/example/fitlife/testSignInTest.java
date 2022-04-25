@@ -1,5 +1,6 @@
 package com.example.fitlife;
 
+//Logic for Signin
 public class testSignInTest {
     String email, first, last, user, pass;
 

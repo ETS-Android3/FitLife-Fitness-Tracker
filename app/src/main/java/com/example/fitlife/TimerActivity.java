@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+//Checks the time for the physical activity tracker
 public class TimerActivity extends AppCompatActivity {
 
     private int id;

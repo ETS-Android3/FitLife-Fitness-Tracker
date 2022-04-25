@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+//Navigation page for all the social aspects of our app. Try to make the app look cleaner.
 public class socialMainPage extends AppCompatActivity {
 
     Button profile, home, leader, friends, points, feedback;

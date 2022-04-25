@@ -4,42 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
+    android:background="#DAECC2"
     android:gravity="center"
-    android:padding="26dp"
     android:orientation="vertical"
+    android:padding="26dp"
     tools:context=".fitnessMain">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="00dp"
         android:gravity="center"
         android:text="Fit Life - Fitness"
         android:textColor="#8BC34A"
-        android:textSize="50sp"
-        android:layout_marginTop="00dp"
-        />
+        android:textSize="50sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="00dp"
         android:gravity="center"
         android:text="Meet all of your fitness goals"
-        android:textColor="#8BC34A"
-        android:textSize="20sp"
-        android:layout_marginBottom="00dp"
-        />
+        android:textColor="#62A514"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome!"
-        />
+        android:text="Welcome!" />
+
     <TextView
+        android:id="@+id/userP3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User"
-        android:id="@+id/userP3"
-        />
+        android:text="User" />
 
     <Button
         android:id="@+id/btnTrack"
@@ -47,9 +45,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:text="Meal Tracker"
         android:textColor="#8BC34A"
+
         android:textStyle="bold" />
 
     <Button
@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:text="Physical Tracker"
         android:textColor="#8BC34A"
@@ -70,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:text="Timley Review"
         android:textColor="#8BC34A"
@@ -82,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:text="Daily Challenge"
         android:textColor="#8BC34A"
@@ -93,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:text="Home"
         android:textColor="#8BC34A"
@@ -104,6 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
+
         android:backgroundTint="#DAECC2"
         android:onClick="logout"
         android:text="Log Out"

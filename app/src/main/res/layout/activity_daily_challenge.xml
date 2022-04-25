@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DAECC2"
     tools:context=".DailyChallenge">
 
     <TextView
@@ -30,18 +31,21 @@
         android:textColor="@color/black"
         android:textSize="26dp"
         android:textStyle="bold" />
+
     <Button
         android:id="@+id/completeTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
         android:layout_below="@id/dailyChallengeText"
-        android:text="Complete"/>
+        android:layout_marginTop="400dp"
+        android:text="Complete" />
+
     <Button
         android:id="@+id/notYet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/completeTask"
-        android:text="Not Yet"/>
+        android:text="Not Yet"
+        android:textColor="#AF1B1B" />
 
 </RelativeLayout>

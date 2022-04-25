@@ -76,25 +76,35 @@
             android:id="@+id/homeBtn2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#8BC34A"
             android:text="Home"/>
         <Button
             android:id="@+id/changePic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#8BC34A"
             android:text="Change Profile Picture" />
         <Button
             android:id="@+id/resetBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#8BC34A"
             android:text="Reset Password"
             />
         <Button
             android:id="@+id/logoutBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#900D09"
             android:text="Logout"
             android:onClick="logout"
             />
+
+        <ImageView
+            android:layout_width="200px"
+            android:layout_height="200px"
+            android:layout_gravity="center"
+            android:src="@drawable/settings" />
     </LinearLayout>
 
 

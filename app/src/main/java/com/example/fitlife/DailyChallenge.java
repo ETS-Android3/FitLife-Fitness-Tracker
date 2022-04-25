@@ -1,14 +1,14 @@
 package com.example.fitlife;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,7 +28,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class DailyChallenge extends AppCompatActivity {
-
+//Create variables for textview, firebase, and points
     TextView dailyChallenge;
     Button completed, notYet;
     DatabaseReference reference, getData;
@@ -45,7 +45,7 @@ public class DailyChallenge extends AppCompatActivity {
         user = fAuth.getCurrentUser();
         String uid = user.getUid();
 
-
+        // Gets the users daily challenge from firebase challenge list.
         getDailyChallenge();
         getData = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
         getData.addValueEventListener(new ValueEventListener() {
@@ -65,13 +65,14 @@ public class DailyChallenge extends AppCompatActivity {
         completed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // Adds the challenge completed total points to the user
                 reference = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
                 totalPoints += 1;
                 HashMap newPoints = new HashMap();
                 newPoints.put("Points", totalPoints);
                 reference.updateChildren(newPoints).addOnCompleteListener(new OnCompleteListener() {
                     @Override
+                    // Chceks it the task executed correctly
                     public void onComplete(@NonNull Task task) {
                         if(task.isSuccessful()){
                             Toast.makeText(DailyChallenge.this, "User Points Updated", Toast.LENGTH_SHORT).show();
@@ -97,10 +98,11 @@ public class DailyChallenge extends AppCompatActivity {
     }
 
     public class setDailyChallenge extends TimerTask {
-
+        // Daily challenge dictionary
         @Override
         public void run() {
             String dailyChal;
+            //array of daily challenges
             String[] arr = {"Do 10 push-ups today", "Do 10 sit-ups today", "Run for 2 miles today",
                     "Do 10 squats today", "Take a 20 minute walk today", "Do a 1 minute plank today",
                     "Do 10 burpees today", "Take a 5 minute jog today", "Do 5 minutes of HIIT today",
@@ -114,7 +116,7 @@ public class DailyChallenge extends AppCompatActivity {
         }
 
     }
-
+//Get the time of 12 AM
     private Date getTomorrowMorning12AM(){
 
         Date date12am = new java.util.Date();
@@ -123,6 +125,7 @@ public class DailyChallenge extends AppCompatActivity {
 
         return date12am;
     }
+    //Try setting daily challenge to occur daily
     public void getDailyChallenge()
     {
         Calendar today = Calendar.getInstance();

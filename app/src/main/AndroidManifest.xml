@@ -11,6 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitLife">
+        <activity android:name=".MealPlanIdeas"
+            android:exported="false" />
+        <activity
+            android:name=".tableList"
+            android:exported="false"/>
+        <activity
+            android:name=".friendPoints"
+            android:exported="false" />
+        <activity
+            android:name=".GroupChallenges"
+            android:exported="false" />
+        <activity
+            android:name=".fitnessMain"
+            android:exported="false" />
+        <activity
+            android:name=".socialMainPage"
+            android:exported="false" />
         <activity
             android:name=".leaderBoard"
             android:exported="false" />
@@ -28,7 +45,8 @@
             android:exported="false" />
         <activity
             android:name=".TimelyReviewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
         <activity
             android:name=".TimerActivity"
             android:exported="false" />
@@ -49,6 +67,12 @@
             android:exported="false" />
         <activity
             android:name=".sigginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddFeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedBackActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

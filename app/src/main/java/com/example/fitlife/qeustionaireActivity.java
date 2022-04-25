@@ -1,19 +1,17 @@
 package com.example.fitlife;
 
 import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.Map;
 
 //Class gets the basic bio data for the user. This data will then be stored within the database, so data can be used later on.
 public class qeustionaireActivity extends AppCompatActivity{
@@ -85,7 +82,7 @@ public class qeustionaireActivity extends AppCompatActivity{
                 String goal = goalDropdown.getSelectedItem().toString().trim();
                 String active = workoutDropdown.getSelectedItem().toString().trim();
 
-
+//Makes sure that the user is entering in information
                 if(TextUtils.isEmpty(age)){
                     editAge.setError("Age Required");
                     return;
@@ -122,7 +119,7 @@ public class qeustionaireActivity extends AppCompatActivity{
 
                     }
                 });
-
+//Go to home page after questionnaire is done
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
             }

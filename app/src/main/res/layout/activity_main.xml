@@ -46,68 +46,18 @@
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
-        android:text="Profile PAge"
-        android:id="@+id/profile"
+        android:text="Fit Life Social"
+        android:id="@+id/social"
         />
     <Button
-        android:id="@+id/btnTrack"
+        android:id="@+id/fit"
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/sign_in_button"
         android:textColor="#8BC34A"
         android:textStyle="bold"
-        android:text="Meal Tracker"/>
-    <Button
-
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Physical Tracker"
-        android:id="@+id/physicals"/>
-    <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Timley Review"
-        android:id="@+id/btnTime"
-        />
-    <Button
-        android:id="@+id/btnleader"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="leader board"/>
-    <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Daily Challenge"
-        android:id="@+id/daily"
-        />
-
-    <Button
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_button"
-        android:textColor="#8BC34A"
-        android:textStyle="bold"
-        android:text="Find Friends"
-        android:id="@+id/btnFriend"
-        />
+        android:text="Fit Life Fitness"/>
 
     <Button
         android:id="@+id/btnLogOut"

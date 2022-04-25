@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 //The Home page of the application. This is used as a way to get to the other activities not supposed to have much other functionality besides that
 public class MainActivity extends AppCompatActivity {
 
-    Button profile, meal, leader, phys, friends, timely, daily;
+    Button social, fit;
     TextView userName;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -49,67 +49,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        profile = findViewById(R.id.profile);
-        profile.setOnClickListener(new View.OnClickListener() {
+        social = findViewById(R.id.social);
+        social.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),userProfileActivity.class));
+                startActivity(new Intent(getApplicationContext(), socialMainPage.class));
                 finish();
             }
         });
 
-        meal = findViewById(R.id.btnTrack);
-        meal.setOnClickListener(new View.OnClickListener() {
+        fit = findViewById(R.id.fit);
+        fit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MealWaterTracking.class));
+                startActivity(new Intent(getApplicationContext(), fitnessMain.class));
                 finish();
             }
         });
 
-        leader = findViewById(R.id.btnleader);
-        leader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), leaderBoard.class));
-                finish();
-            }
-        });
-
-
-
-        friends = findViewById(R.id.btnFriend);
-        friends.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),SearchFriends.class));
-            }
-        });
-
-        phys = findViewById(R.id.physicals);
-        phys.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PhysicalActivity.class));
-            }
-        });
-
-        timely = findViewById(R.id.btnTime);
-        timely.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity((new Intent(getApplicationContext(), TimelyReviewActivity.class)));
-            }
-        });
-
-        daily = findViewById(R.id.daily);
-        daily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity((new Intent(getApplicationContext(), DailyChallenge.class)));
-
-            }
-        });
 
 
     }
